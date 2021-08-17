@@ -1,9 +1,15 @@
-import Banner from "./Components/Home/Banner/Banner.jsx";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Home from "./Components/Home/Home";
 import "./App.css";
+
 function App() {
   return (
     <div className="App">
-      <Banner />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Home} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
