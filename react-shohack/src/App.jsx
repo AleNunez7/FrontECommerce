@@ -1,7 +1,9 @@
+import Banner from "./Components/Home/Banner/Banner.jsx";
+import "./App.css";
 function App() {
   return (
     <div className="App">
-      <h1>Proyecto Base</h1>
+      <Banner />
     </div>
   );
 }
