@@ -6,15 +6,6 @@
 .divColor {
   color: white;
 }
-/* Fin Banner */
-.nav {
-  text-decoration: none;
-  background-image: linear-gradient(currentColor, currentColor);
-  background-position: 0% 100%;
-  background-repeat: no-repeat;
-  background-size: 0% 2px;
-  transition: background-size 0.3s;
-}
 
 /* Comienzo Footer */
 footer {
