@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container fw-bold mt-2 mb-2">
-          <a className="navbar-brand " href="#">
-            ShoHack
+          <a className="navbar-brand fs-3" href="/">
+            SHOHACK
           </a>
           <button
             className="navbar-toggler"
@@ -22,17 +23,26 @@ function Navbar() {
 
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav ms-auto">
-              <a className="nav nav-link active " aria-current="page" href="#">
+              <a
+                className="nav nav-link active "
+                aria-current="page"
+                href="/productos"
+              >
                 Productos
               </a>
-              <a className="nav-link active " aria-current="page" href="#">
-                Sobre Nuestro Proyecto
+              <a
+                className="nav-link active "
+                aria-current="page"
+                href="/sobre-nosotros"
+              >
+                Sobre nosotros
               </a>
             </div>
             <div className="ms-auto">
               <i className="far fa-user px-2"></i>
-              <i className="fas fa-search px-2"></i>
-              <i className="fas fa-shopping-cart px-2"></i>
+              <Link className="text-dark" to="/carrito">
+                <i className="fas fa-shopping-cart px-2"></i>
+              </Link>
             </div>
           </div>
         </div>
