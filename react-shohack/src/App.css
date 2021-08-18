@@ -5,3 +5,25 @@
 .divColor {
   color: white;
 }
+
+/* Comienzo Footer */
+footer {
+  color: rgb(199, 199, 199);
+  background-color: rgb(241, 237, 237);
+  font-size: 1rem;
+}
+footer ul li {
+  list-style: none;
+  padding: 0;
+}
+footer a {
+  text-decoration: none;
+  font-size: 0.7rem;
+  color: grey;
+  padding-bottom: 10px;
+}
+footer a:hover {
+  text-decoration: underline;
+  color: grey;
+}
+/* Fin del Footer */
