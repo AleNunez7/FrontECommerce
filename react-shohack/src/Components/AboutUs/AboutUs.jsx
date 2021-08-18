@@ -1,15 +1,16 @@
 import React from "react";
 import Navbar from "../Home/Navbar/Navbar";
 import Footer from "../Home/Footer/Footer";
-import Card from "react-bootstrap/Card";
-import Container from "react-bootstrap/Container";
 import "./AboutUs.css";
 function AboutUs() {
   return (
     <>
       <Navbar />
       <div>
-        <h1 className="fw-light mt-5 mb-5 text-center"> CONOCÉ MAS SOBRE NOSOTROS </h1>
+        <h1 className="fw-light mt-5 mb-5 text-center">
+          {" "}
+          CONOCÉ MAS SOBRE NOSOTROS{" "}
+        </h1>
       </div>
       <div className="container">
         <div className="row d-flex justify-content-between text-center">
@@ -54,19 +55,22 @@ function AboutUs() {
       <div className="text-center">
         <h1 className="fw-light mt-5 mb-5"> SOBRE EL PROYECTO </h1>
         <p>
-          Loremipsumdolorsitametconsecteturadipisicingelit. Inciduntexcepturilaboriosamfacere,
-          repudiandaeexercitationemsimiliquemollitiafacilisdebitisoditnulla,
-          autemculpavoluptatumvero. Adameteostemporacumqueexpedita!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur,
+          odit commodi tenetur odio nobis praesentium fugiat voluptatem vero
+          laborum. Id deserunt soluta earum dolores sapiente in ea est totam
+          doloremque.
         </p>
         <p>
-          Loremipsumdolorsitametconsecteturadipisicingelit. Inciduntexcepturilaboriosamfacere,
-          repudiandaeexercitationemsimiliquemollitiafacilisdebitisoditnulla,
-          autemculpavoluptatumvero. Adameteostemporacumqueexpedita!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ad
+          hic eos sit id quisquam necessitatibus minus vero, accusantium,
+          corrupti reprehenderit nam doloremque dolor. Iste nostrum aut
+          exercitationem. Ipsam, accusamus!
         </p>
         <p>
-          Loremipsumdolorsitametconsecteturadipisicingelit. Inciduntexcepturilaboriosamfacere,
-          repudiandaeexercitationemsimiliquemollitiafacilisdebitisoditnulla,
-          autemculpavoluptatumvero. Adameteostemporacumqueexpedita!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus facilis rerum mollitia aspernatur voluptates molestiae
+          temporibus in laboriosam nam voluptatum. Facere a adipisci porro totam
+          deleniti corporis impedit officia doloribus.
         </p>
       </div>
       <Footer />

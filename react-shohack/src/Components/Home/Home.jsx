@@ -14,7 +14,7 @@ function Home() {
       <div className="text-center mt-3">
         <Link
           className="p-3 text-white text-decoration-none btn btn-dark rounded"
-          to="/"
+          to="/productos"
         >
           VER TODOS
         </Link>
