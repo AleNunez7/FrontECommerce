@@ -23,15 +23,26 @@ function Navbar() {
 
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav ms-auto">
-              <a className="nav nav-link active " aria-current="page" href="/productos">
+              <a
+                className="nav nav-link active "
+                aria-current="page"
+                href="/productos"
+              >
                 Productos
               </a>
-              <a className="nav-link active " aria-current="page" href="/sobre-nosotros">
+              <a
+                className="nav-link active "
+                aria-current="page"
+                href="/sobre-nosotros"
+              >
                 Sobre nosotros
               </a>
             </div>
             <div className="ms-auto">
-              <i className="far fa-user px-2"></i>
+              <Link className="text-dark" to="/user">
+                <i className="far fa-user px-2"></i>
+              </Link>
+
               <Link className="text-dark" to="/carrito">
                 <i className="fas fa-shopping-cart px-2"></i>
               </Link>
