@@ -22,10 +22,14 @@ function Navbar() {
 
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav ms-auto">
-              <a className="nav-link active" aria-current="page" href="#">
+              <a
+                className="nav nav-link active px-4"
+                aria-current="page"
+                href="#"
+              >
                 Productos
               </a>
-              <a className="nav-link active" aria-current="page" href="#">
+              <a className="nav-link active " aria-current="page" href="#">
                 Sobre Nuestro Proyecto
               </a>
             </div>
