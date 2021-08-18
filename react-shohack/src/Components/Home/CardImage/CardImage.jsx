@@ -8,7 +8,7 @@ function CardImage() {
           <img
             className="img-fluid "
             src="img/vans.jpg"
-            alt="Champion Adidas"
+            alt="Champion Vans"
           />
           <div className="mt-3">
             <p className="fs-4">ADIDAS</p>
@@ -30,7 +30,7 @@ function CardImage() {
           <img
             className="img-fluid "
             src="img/nike.jpg"
-            alt="Champion Adidas"
+            alt="Champion Nike"
           />
           <div className="mt-3">
             <p className="fs-4">ADIDAS</p>
