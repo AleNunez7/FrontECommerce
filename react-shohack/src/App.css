@@ -1,3 +1,4 @@
+/* Comienzo Banner */
 .colorSectionBanner {
   background-color: black;
   background-image: url("https://c.wallhere.com/photos/37/71/1280x800_px_Allstars_black_Chucks_shoes-817969.jpg!d");
@@ -5,7 +6,7 @@
 .divColor {
   color: white;
 }
-
+/* Fin Banner */
 .nav {
   text-decoration: none;
   background-image: linear-gradient(currentColor, currentColor);
