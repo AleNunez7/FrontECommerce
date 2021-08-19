@@ -5,9 +5,9 @@ function Filter() {
     <div className="container">
       <div className="row my-4">
         <div className="col-sm-4 ">
-          <div class="dropdown text-center">
+          <div className="dropdown text-center">
             <button
-              class="btn btn-dark dropdown-toggle"
+              className="btn btn-dark dropdown-toggle"
               type="button"
               id="dropdownMenuButton2"
               data-bs-toggle="dropdown"
@@ -15,22 +15,19 @@ function Filter() {
             >
               Categoria
             </button>
-            <ul
-              class="dropdown-menu dropdown-menu-dark"
-              aria-labelledby="dropdownMenuButton2"
-            >
+            <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
               <li>
-                <a class="dropdown-item active" href="#">
+                <a className="dropdown-item active" href="#">
                   Action
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Another action
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Separated link
                 </a>
               </li>
@@ -38,9 +35,9 @@ function Filter() {
           </div>
         </div>
         <div className="col-sm-4 ">
-          <div class="dropdown w-100 text-center">
+          <div className="dropdown w-100 text-center">
             <button
-              class="btn btn-dark dropdown-toggle"
+              className="btn btn-dark dropdown-toggle"
               type="button"
               id="dropdownMenuButton2"
               data-bs-toggle="dropdown"
@@ -48,22 +45,19 @@ function Filter() {
             >
               Marca
             </button>
-            <ul
-              class="dropdown-menu dropdown-menu-dark"
-              aria-labelledby="dropdownMenuButton2"
-            >
+            <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
               <li>
-                <a class="dropdown-item active" href="#">
+                <a className="dropdown-item active" href="#">
                   Action
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Another action
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Separated link
                 </a>
               </li>
