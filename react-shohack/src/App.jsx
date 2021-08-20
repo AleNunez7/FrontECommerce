@@ -4,7 +4,8 @@ import Products from "./Components/Products/Products";
 import ShoppingCart from "./Components/ShoppingCart/ShoppingCart";
 import Product from "./Components/Product/Product";
 import AboutUs from "./Components/AboutUs/AboutUs";
-import User from "./Components/User/User";
+import Login from "./Components/User/Login/Login";
+import SignIn from "./Components/User/SignIn/SignIn";
 import "./App.css";
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
           <Route path="/productos" component={Products} />
           <Route path="/carrito" component={ShoppingCart} />
           <Route path="/sobre-nosotros" component={AboutUs} />
-          <Route path="/user" component={User} />
+          <Route path="/login" component={Login} />
+          <Route path="/registro" component={SignIn} />
         </Switch>
       </BrowserRouter>
     </div>

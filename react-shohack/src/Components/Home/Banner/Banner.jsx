@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Banner() {
   return (
     <div className="colorSectionBanner">
@@ -10,9 +10,9 @@ function Banner() {
             <h2 className="lead mt-4">
               Café en la puerta de tu casa cada dos semanas a solo $900
             </h2>
-            <button type="button" class="btn btn-light rounded mt-4">
-              Unite al culto
-            </button>
+            <Link to="/registro" className="btn btn-light rounded mt-4">
+              REGISTRARSE
+            </Link>
           </div>
         </div>
       </section>

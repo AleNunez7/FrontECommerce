@@ -39,13 +39,19 @@ function Navbar() {
               </a>
             </div>
             <div className="ms-auto">
-              <Link className="text-dark" to="/user">
+              <Link
+                to="/login"
+                className="btn btn-dark text-white rounded mt-4"
+              >
+                LOGIN
+              </Link>
+              {/* <Link className="text-dark" to="/user">
                 <i className="far fa-user px-2"></i>
               </Link>
 
               <Link className="text-dark" to="/carrito">
                 <i className="fas fa-shopping-cart px-2"></i>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
