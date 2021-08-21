@@ -1,16 +1,7 @@
-/* Comienzo Banner */
-.colorSectionBanner {
-  text-align: center;
-  color: white;
-  background-size: cover;
-  background-color: #1c1c1fd5;
-  background-blend-mode: soft-light;
-  width: 100%;
-  height: 400px;
-  background-image: url("https://www.authogar.com/media/wysiwyg/porto/homepage/content/20/home_shoes.jpg");
-}
-.divColor {
-  color: white;
+.btn:hover {
+  color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 4px 16px rgb(0, 0, 0);
+  transition: all 0.2s ease;
 }
 
 /* Comienzo Footer */
