@@ -20,7 +20,7 @@ function CardImage() {
           return (
             <div className="col-sm-4">
               <Link
-                to={`/product/${product._id}`}
+                to={`/producto/${product._id}`}
                 className="text-decoration-none"
                 style={{ color: "black" }}
               >

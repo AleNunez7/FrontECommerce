@@ -40,7 +40,7 @@ function Navbar() {
           </button>
 
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="navbar-nav ms-auto">
+            <div className="navbar-nav ">
               <a className="nav nav-link active " aria-current="page" href="/productos">
                 Productos
               </a>
@@ -48,13 +48,14 @@ function Navbar() {
                 Sobre nosotros
               </a>
             </div>
-            <div className="ms-auto">
-              {!user && (
-                <Link to="/login" className="btn btn-dark text-white rounded me-1">
-                  LOGIN
+            {user ? (
+              <div className="ms-auto">
+                <Link to="/carrito" className="text-decoration-none text-dark pe-1">
+                  <i class="fas fa-shopping-cart"></i>
                 </Link>
-              )}
-              {user && (
+                <span className="pe-3 fw-bold fs-5">
+                  <i class="fas fa-user ps-1 fa-sm"></i> {user.username}
+                </span>
                 <Link
                   to="/login"
                   onClick={() => dispatch({ type: "REMOVE_USER" })}
@@ -62,15 +63,14 @@ function Navbar() {
                 >
                   LOGOUT
                 </Link>
-              )}
-              {/* <Link className="text-dark" to="/user">
-                <i className="far fa-user px-2"></i>
-              </Link>
-
-              <Link className="text-dark" to="/carrito">
-                <i className="fas fa-shopping-cart px-2"></i>
-              </Link> */}
-            </div>
+              </div>
+            ) : (
+              <div className="ms-auto">
+                <Link to="/login" className="btn btn-dark text-white rounded me-1">
+                  LOGIN
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </nav>
