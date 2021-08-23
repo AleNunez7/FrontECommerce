@@ -1,7 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 function Navbar() {
+  const user = useSelector((state) => state.user);
+  const [btnLogOut, setBtnLogOut] = useState(false);
+  const dispatch = useDispatch();
+
+  function handleLogOut(ev) {
+    setBtnLogOut(false);
+  }
+
+  useEffect(() => {
+    window.addEventListener("click", handleLogOut);
+    return () => window.removeEventListener("click", handleLogOut);
+  }, []);
+
+  useEffect(() => {
+    setBtnLogOut(btnLogOut);
+  }, [btnLogOut]);
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -31,9 +49,21 @@ function Navbar() {
               </a>
             </div>
             <div className="ms-auto">
-              <Link to="/login" className="btn btn-dark text-white rounded">
-                LOGIN
-              </Link>
+              {!user && (
+                <Link to="/login" className="btn btn-dark text-white rounded me-1">
+                  LOGIN
+                </Link>
+              )}
+              {user && (
+                <Link
+                  to="/login"
+                  id="btnLogOut"
+                  onClick={() => dispatch({ type: "REMOVE_USER" })}
+                  className="btn btn-dark text-white rounded"
+                >
+                  LOGOUT
+                </Link>
+              )}
               {/* <Link className="text-dark" to="/user">
                 <i className="far fa-user px-2"></i>
               </Link>

@@ -1,26 +1,4 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-
 function Footer() {
-  const user = useSelector((state) => state.user);
-  const [btnLogOut, setBtnLogOut] = useState(false);
-  const dispatch = useDispatch();
-
-  function handleLogOut(ev) {
-    setBtnLogOut(false);
-  }
-
-  useEffect(() => {
-    window.addEventListener("click", handleLogOut);
-    return () => window.removeEventListener("click", handleLogOut);
-  }, []);
-
-  useEffect(() => {
-    setBtnLogOut(btnLogOut);
-  }, [btnLogOut]);
-
   return (
     <div>
       <footer className="p-5 mt-5 bg-dark ">
@@ -88,14 +66,6 @@ function Footer() {
         </div>
         <div className="text-center">
           <h2 className="m-4">ShoHack</h2>
-          <Link
-            to="/login"
-            id="btnLogOut"
-            onClick={() => dispatch({ type: "REMOVE_USER" })}
-            className="animate__animated animate__pulse btn btn-light rounded mt-4"
-          >
-            LOG OUT
-          </Link>
         </div>
         <hr />
         <div className="container">

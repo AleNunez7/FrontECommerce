@@ -11,8 +11,6 @@ function Products() {
       <h2 className="text-center fs-2 fw-bold my-4">PRODUCTOS</h2>
       <Filter />
       <CardImage />
-      <CardImage />
-      <CardImage />
       <Footer />
     </>
   );
