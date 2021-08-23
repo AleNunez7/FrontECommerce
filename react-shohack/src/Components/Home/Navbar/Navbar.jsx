@@ -24,7 +24,7 @@ function Navbar() {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light ">
         <div className="container fw-bold mt-2 mb-2 ">
-          <a className="navbar-brand fs-2" href="/">
+          <a className="navbar-brand fs-1" href="/">
             SHOHACK
           </a>
           <button
