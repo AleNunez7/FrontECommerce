@@ -25,10 +25,4 @@ footer a:hover {
   color: grey;
 }
 
-#btnLogOut:hover {
-  color: rgb(0, 0, 0) !important;
-  box-shadow: 0 4px 16px rgb(255, 255, 255);
-  transition: all 0.2s ease;
-  text-decoration: none;
-}
 /* Fin del Footer */

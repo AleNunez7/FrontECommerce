@@ -33,8 +33,8 @@ function Login() {
   return (
     <>
       <Navbar />
-      <div className="container my-3">
-        <div className="border p-3">
+      <div className="container d-flex justify-content-center my-3">
+        <div className="border p-3 w-50">
           <p className="fw-bold fs-4 text-center">INGRESAR</p>
           <form onSubmit={handleLogin}>
             <label className="mt-3 fw-bold" htmlFor="">
@@ -59,9 +59,11 @@ function Login() {
               onChange={handlePassword}
               placeholder="Ingrese su contraseña"
             />
-            <button type="submit" className="btn btn-dark text-white mt-3">
-              Aceptar
-            </button>
+            <div className="text-center">
+              <button type="submit" className="btn btn-dark text-white mt-3 ">
+                Aceptar
+              </button>
+            </div>
           </form>
         </div>
       </div>

@@ -35,8 +35,8 @@ function SignIn() {
   return (
     <div>
       <Navbar />
-      <div className="container my-3">
-        <div className="border p-3">
+      <div className="container my-3 d-flex justify-content-center">
+        <div className="border p-3 w-50 ">
           <p className="fw-bold fs-4 text-center">REGISTRO</p>
           <form onSubmit={handleSignIn}>
             <label className="mt-3 fw-bold" htmlFor="">
@@ -94,7 +94,9 @@ function SignIn() {
               onChange={(ev) => setPassword(ev.target.value)}
               placeholder="Ingrese su contraseña"
             />
-            <button className="btn btn-dark text-white mt-3">SignIn</button>
+            <div className="text-center">
+              <button className="btn btn-dark text-white mt-3">Sign In</button>
+            </div>
           </form>
         </div>
       </div>

@@ -57,7 +57,6 @@ function Navbar() {
               {user && (
                 <Link
                   to="/login"
-                  id="btnLogOut"
                   onClick={() => dispatch({ type: "REMOVE_USER" })}
                   className="btn btn-dark text-white rounded"
                 >
