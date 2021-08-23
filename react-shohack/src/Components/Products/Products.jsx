@@ -8,7 +8,7 @@ function Products() {
   return (
     <>
       <Navbar />
-      <h2 className="text-center fs-2 fw-bold my-4">PRODUCTOS</h2>
+      <h2 className="text-center fs-2 fw-bold my-5">NUESTROS PRODUCTOS</h2>
       <Filter />
       <CardImage />
       <Footer />
