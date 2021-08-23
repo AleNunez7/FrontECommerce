@@ -21,10 +21,10 @@ function Navbar() {
     setBtnLogOut(btnLogOut);
   }, [btnLogOut]);
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container fw-bold mt-2 mb-2">
-          <a className="navbar-brand fs-3" href="/">
+    <>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light ">
+        <div className="container fw-bold mt-2 mb-2 ">
+          <a className="navbar-brand fs-2" href="/">
             SHOHACK
           </a>
           <button
@@ -74,7 +74,7 @@ function Navbar() {
           </div>
         </div>
       </nav>
-    </div>
+    </>
   );
 }
 
