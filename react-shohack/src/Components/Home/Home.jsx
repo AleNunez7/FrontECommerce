@@ -10,15 +10,6 @@ function Home() {
     <div>
       <Navbar />
       <Banner />
-      <CardImage />
-      <div className="text-center mt-3">
-        <Link
-          className="p-3 text-white text-decoration-none btn btn-dark rounded"
-          to="/productos"
-        >
-          VER TODOS
-        </Link>
-      </div>
       <Footer />
     </div>
   );

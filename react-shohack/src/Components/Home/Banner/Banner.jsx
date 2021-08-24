@@ -38,9 +38,12 @@ function Banner() {
         </SwiperSlide>
       </Swiper>
       <div className="text-center">
-        <h1 className="fw-light mt-4 fs-1 ">TU MEJOR OPCIÓN PRECIO/CALIDAD</h1>
-        <h2 className="lead mt-4">El mejor calzado importado del exterior</h2>
-        <Link to="/registro" className="animate__animated animate__pulse btn btn-dark rounded mt-4">
+        <h1 className="fw-light mt-5 mb-5 fs-1 ">TU MEJOR OPCIÓN PRECIO/CALIDAD</h1>
+        <h2 className="lead mt-3 mb-3">El mejor calzado importado del exterior</h2>
+        <Link
+          to="/registro"
+          className="animate__animated animate__pulse btn btn-dark rounded mt-3 mb-5"
+        >
           REGISTRARSE
         </Link>
       </div>
