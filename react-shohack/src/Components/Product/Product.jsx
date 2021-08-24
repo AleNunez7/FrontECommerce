@@ -3,11 +3,20 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import Navbar from "../Home/Navbar/Navbar";
 import Footer from "../Home/Footer/Footer";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function Product() {
+  const dispatch = useDispatch();
   const params = useParams();
-  const [productById, setProductById] = useState([]);
+  const [productById, setProductById] = useState({});
+  const user = useSelector((state) => state.user);
   console.log(productById);
+
+  async function handleAddItem() {
+    dispatch({ type: "ADD_ITEM", payload: productById });
+  }
+
   useEffect(() => {
     const getProductById = async () => {
       const response = await axios({
@@ -24,7 +33,11 @@ function Product() {
       <div className="container mt-5">
         <div className="row">
           <div className="col-sm-6">
-            <img className="img-fluid " src="img/nike.jpg" alt="Champion Nike" />
+            <img
+              className="img-fluid "
+              src={process.env.REACT_APP_API_URL + productById.imageName}
+              alt="Champion Nike"
+            />
           </div>
           <div className="col-sm-6">
             <h2 className="mt-5">{productById.name}</h2>
@@ -39,9 +52,13 @@ function Product() {
                 <i class="fas fa-plus"></i>
               </button>
             </div>
-            <button type="button" className="btn btn-dark rounded-pill mt-3">
+            <Link
+              to="/carrito"
+              onClick={handleAddItem}
+              className="btn btn-dark rounded-pill mt-3"
+            >
               Añadir al carrito
-            </button>
+            </Link>
           </div>
         </div>
       </div>

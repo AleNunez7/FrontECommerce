@@ -13,6 +13,7 @@ function CardImage() {
     };
     getProducts();
   }, []);
+
   return (
     <div className="container">
       <div className="row text-center fw-bold">
@@ -24,10 +25,13 @@ function CardImage() {
                 className="text-decoration-none"
                 style={{ color: "black" }}
               >
-                <img className="img-fluid " src="img/vans.jpg" alt="Champion Vans" />
+                <img
+                  className="img-fluid "
+                  src={process.env.REACT_APP_API_URL + product.imageName}
+                  alt="Champion Vans"
+                />
                 <div className="mt-3">
                   <p className="fs-4">{product.name}</p>
-                  <p className="fs-6">{product.description}</p>
                   <p className="fs-3">$ {product.price}</p>
                 </div>
               </Link>

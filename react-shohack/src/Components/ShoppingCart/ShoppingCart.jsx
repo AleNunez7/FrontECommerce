@@ -25,8 +25,6 @@ function ShoppingCart() {
               <hr />
             </div>
             <Item />
-            <Item />
-            <Item />
           </div>
           <div className="col-sm-5">
             <div className="border p-3">

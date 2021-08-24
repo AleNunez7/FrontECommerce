@@ -24,7 +24,6 @@ function SignIn() {
         url: "http://localhost:8000/users",
         data: { username, firstname, lastname, email, password },
       });
-      console.log(response.data.user);
       dispatch({ type: "ADD_USER", payload: response.data });
       history.push("/");
     } catch (error) {
