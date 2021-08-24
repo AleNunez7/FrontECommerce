@@ -25,16 +25,16 @@ function Banner() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src="http://localhost:3000/img/vans.jpg" alt="" />
+          <div className="image-carousel img1"> </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="http://localhost:3000/img/adidas1.jpg" alt="" />
+          <div className="image-carousel img2"> </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="http://localhost:3000/img/nike.jpg" alt="" />
+          <div className="image-carousel img3"></div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="http://localhost:3000/img/fila.jpeg" alt="" />
+          <div className="image-carousel img4"></div>
         </SwiperSlide>
       </Swiper>
       <div className="text-center">

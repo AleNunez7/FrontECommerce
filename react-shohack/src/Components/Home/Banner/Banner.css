@@ -24,12 +24,45 @@
   align-items: center;
 }
 
-.swiper-slide img {
+/* .swiper-slide img {
   display: block;
-  width: 40%;
+  width: 450%;
   height: 40%;
   object-fit: cover;
-}
+} */
 .swiper-pagination-bullet {
   background-color: black;
+}
+
+.image-carousel {
+  width: 100rem;
+  height: 40rem;
+}
+
+.img1 {
+  background-image: url("https://smarthippo.org/wp-content/uploads/2019/06/adidas-originals-brand-banner-update-.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img2 {
+  background-image: url("https://cdn.shopify.com/s/files/1/0565/7801/5426/files/A.jpg?v=1620695999");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img3 {
+  background-image: url("https://sbtstylewear.com/app/assets/images/banner-dior-air-jordan-1-retro-high-1200x515.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img4 {
+  background-image: url("https://i.pinimg.com/originals/c8/aa/b4/c8aab4273e859d0d03f9d138e1889425.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
