@@ -51,11 +51,14 @@ function Navbar() {
             {user ? (
               <div className="ms-auto">
                 <Link to="/carrito" className="text-decoration-none text-dark pe-1">
-                  <i class="fas fa-shopping-cart"></i>
+                  <button className="bg-light btnShoppingCart position-relative">
+                    <i className="fas fa-shopping-cart "></i>
+                    <span className="position-absolute top-50 start-0 translate-middle p-2">
+                      <span className="pe-2 fw-bold">10</span>
+                    </span>
+                  </button>
                 </Link>
-                <span className="pe-3 fw-bold fs-5">
-                  <i class="fas fa-user ps-1 fa-sm"></i> {user.username}
-                </span>
+                <span className="pe-3 fw-bold fs-5">{user.username}</span>
                 <Link
                   to="/login"
                   onClick={() => dispatch({ type: "REMOVE_USER" })}

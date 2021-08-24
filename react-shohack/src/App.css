@@ -26,3 +26,8 @@ footer a:hover {
 }
 
 /* Fin del Footer */
+
+/*Inicio Navbar */
+.btnShoppingCart {
+  border: none;
+}
