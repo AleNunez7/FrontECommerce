@@ -14,6 +14,7 @@ function Product() {
   console.log(productById);
 
   async function handleAddItem() {
+    productById.quantity = 0;
     dispatch({ type: "ADD_ITEM", payload: productById });
   }
 
