@@ -1,10 +1,14 @@
-import React from "react";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import Navbar from "../Home/Navbar/Navbar";
 import Footer from "../Home/Footer/Footer";
 import Item from "./Item";
 import { Link } from "react-router-dom";
 
 function ShoppingCart() {
+  const cart = useSelector((state) => state.cart);
+  let total = 0;
+
   return (
     <>
       <Navbar />
@@ -19,24 +23,22 @@ function ShoppingCart() {
                 <div className="d-flex justify-content-between">
                   <p>PRECIO</p>
                   <p>CANTIDAD</p>
-                  <p>SUBTOTAL</p>
                 </div>
               </div>
               <hr />
             </div>
-            <Item />
+            {cart.map((item) => {
+              total = total + item.price * item.quantity;
+              return <Item item={item} />;
+            })}
           </div>
           <div className="col-sm-5">
             <div className="border p-3">
               <p className="text-start">TOTAL DEL CARRITO</p>
               <hr />
               <div className="d-flex justify-content-between">
-                <p>Subtotal</p>
-                <p className="fw-bold">$ 1210</p>
-              </div>
-              <div className="d-flex justify-content-between">
                 <p>Total</p>
-                <p className="fw-bold">$ 1210</p>
+                <p className="fw-bold">$ {total}</p>
               </div>
               <div className="text-center mt-3">
                 <Link

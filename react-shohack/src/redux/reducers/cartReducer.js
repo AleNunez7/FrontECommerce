@@ -1,14 +1,16 @@
 function cartReducer(cart = [], action) {
   switch (action.type) {
-    case "ADD_ITEM": {
-      cart.map((item) => {
-        if (item.id !== action.payload.id) {
-          return [...cart, action.payload];
+    case "ADD_ITEM":
+      const checkItem = cart.find((item) => item._id === action.payload._id);
+      {
+        console.log(checkItem);
+        if (checkItem) {
+          checkItem.quantity++;
+          return [...cart];
         } else {
-          return cart;
+          return [...cart, action.payload];
         }
-      });
-    }
+      }
     case "REMOVE_ITEM": {
       return cart.filter((item) => item !== action.payload);
     }

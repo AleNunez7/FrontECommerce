@@ -9,24 +9,24 @@ import { Link } from "react-router-dom";
 function Product() {
   const dispatch = useDispatch();
   const params = useParams();
-  const [productById, setProductById] = useState({});
+  const [product, setProduct] = useState({});
   const user = useSelector((state) => state.user);
-  console.log(productById);
+  console.log(product);
 
   async function handleAddItem() {
-    productById.quantity = 0;
-    dispatch({ type: "ADD_ITEM", payload: productById });
+    product.quantity = 1;
+    dispatch({ type: "ADD_ITEM", payload: product });
   }
 
   useEffect(() => {
-    const getProductById = async () => {
+    const getproduct = async () => {
       const response = await axios({
         method: "get",
         url: "http://localhost:8000/products/" + params.id,
       });
-      setProductById(response.data);
+      setProduct(response.data);
     };
-    getProductById();
+    getproduct();
   }, []);
   return (
     <>
@@ -36,14 +36,14 @@ function Product() {
           <div className="col-sm-6">
             <img
               className="img-fluid "
-              src={process.env.REACT_APP_API_URL + productById.imageName}
+              src={process.env.REACT_APP_API_URL + product.imageName}
               alt="Champion Nike"
             />
           </div>
           <div className="col-sm-6">
-            <h2 className="mt-5">{productById.name}</h2>
-            <p className="fs-3 fw-bold ">$ {productById.price}</p>
-            {productById.description}
+            <h2 className="mt-5">{product.name}</h2>
+            <p className="fs-3 fw-bold ">$ {product.price}</p>
+            {product.description}
             <div className=" d-flex align-items-center mt-3 ">
               <button className="btn btn-outline-secondary">
                 <i class="fas fa-minus"></i>
