@@ -26,7 +26,7 @@ function CardImage() {
                 style={{ color: "black" }}
               >
                 <img
-                  className="img-fluid "
+                  className="img-fluid h-50"
                   src={process.env.REACT_APP_API_URL + product.imageName}
                   alt="Champion Vans"
                 />
