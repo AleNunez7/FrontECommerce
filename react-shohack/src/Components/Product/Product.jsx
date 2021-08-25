@@ -8,7 +8,12 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 function Product() {
-  const closeAfter7 = () => toast("Se agregó el producto al carrito!", { autoClose: 7000 });
+  const closeAfter7 = () =>
+    toast.dark(
+      "Se agregó el producto al carrito!",
+      { position: toast.POSITION.BOTTOM_RIGHT },
+      { autoClose: 4000 }
+    );
   const dispatch = useDispatch();
   const params = useParams();
   const [product, setProduct] = useState({});
@@ -57,7 +62,7 @@ function Product() {
               </button>
             </div>
             <button onClick={handleAddItem} className="btn btn-dark rounded-pill mt-3">
-              <ToastContainer autoClose={8000} />
+              <ToastContainer bottom-right autoClose={4000} />
               Añadir al carrito
             </button>
           </div>
