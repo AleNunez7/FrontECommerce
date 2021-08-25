@@ -5,8 +5,10 @@ import Navbar from "../Home/Navbar/Navbar";
 import Footer from "../Home/Footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function Product() {
+  const closeAfter7 = () => toast("Se agregó el producto al carrito!", { autoClose: 7000 });
   const dispatch = useDispatch();
   const params = useParams();
   const [product, setProduct] = useState({});
@@ -16,6 +18,7 @@ function Product() {
   async function handleAddItem() {
     product.quantity = 1;
     dispatch({ type: "ADD_ITEM", payload: product });
+    closeAfter7();
   }
 
   useEffect(() => {
@@ -53,13 +56,10 @@ function Product() {
                 <i class="fas fa-plus"></i>
               </button>
             </div>
-            <Link
-              to="/carrito"
-              onClick={handleAddItem}
-              className="btn btn-dark rounded-pill mt-3"
-            >
+            <button onClick={handleAddItem} className="btn btn-dark rounded-pill mt-3">
+              <ToastContainer autoClose={8000} />
               Añadir al carrito
-            </Link>
+            </button>
           </div>
         </div>
       </div>
