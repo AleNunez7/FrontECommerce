@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useHistory } from "react-router-dom";
+
 function Product() {
   const closeAfter7 = () =>
     toast.dark(
@@ -18,12 +20,16 @@ function Product() {
   const params = useParams();
   const [product, setProduct] = useState({});
   const user = useSelector((state) => state.user);
-  console.log(product);
+  const history = useHistory();
 
   async function handleAddItem() {
-    product.quantity = 1;
-    dispatch({ type: "ADD_ITEM", payload: product });
-    closeAfter7();
+    if (user) {
+      product.quantity = 1;
+      dispatch({ type: "ADD_ITEM", payload: product });
+      closeAfter7();
+    } else {
+      history.push("/login");
+    }
   }
 
   useEffect(() => {
@@ -61,7 +67,10 @@ function Product() {
                 <i class="fas fa-plus"></i>
               </button>
             </div>
-            <button onClick={handleAddItem} className="btn btn-dark rounded-pill mt-3">
+            <button
+              onClick={handleAddItem}
+              className="btn btn-dark rounded-pill mt-3"
+            >
               <ToastContainer bottom-right autoClose={4000} />
               Añadir al carrito
             </button>

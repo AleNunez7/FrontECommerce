@@ -28,7 +28,7 @@ function Login() {
     });
     response.data.user.token = await response.data.token;
     dispatch({ type: "ADD_USER", payload: response.data.user });
-    history.push("/");
+    history.push("/productos");
   };
   return (
     <>
