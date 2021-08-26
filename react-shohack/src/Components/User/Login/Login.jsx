@@ -5,8 +5,16 @@ import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
+  const closeAfter7 = () =>
+    toast.dark(
+      "Contraseña incorrecta, por favor vuelva a ingresar",
+      { position: toast.POSITION.BOTTOM_RIGHT },
+      { autoClose: 4000 }
+    );
   const dispatch = useDispatch();
   const history = useHistory();
   const [password, setPassword] = useState("");
@@ -27,8 +35,13 @@ function Login() {
       data: { username, password },
     });
     response.data.user.token = await response.data.token;
-    dispatch({ type: "ADD_USER", payload: response.data.user });
-    history.push("/productos");
+    if (response.data.user.token) {
+      dispatch({ type: "ADD_USER", payload: response.data.user });
+      history.push("/productos");
+    } else {
+      closeAfter7();
+      <ToastContainer bottom-right autoClose={4000} />;
+    }
   };
   return (
     <>

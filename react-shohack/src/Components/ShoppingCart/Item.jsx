@@ -1,12 +1,21 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Item({ item }) {
+  const closeAfter7 = () =>
+    toast.dark(
+      "El producto se retiró de la lista correctamente",
+      { position: toast.POSITION.BOTTOM_RIGHT },
+      { autoClose: 4000 }
+    );
   const dispatch = useDispatch();
 
   async function handleRemoveItem(item) {
     dispatch({ type: "REMOVE_ITEM", payload: item });
+    closeAfter7();
   }
 
   return (
@@ -23,13 +32,10 @@ function Item({ item }) {
             </div>
             <div className="col-sm-8">
               <p className="fw-bold fs-6">{item.name}</p>
-              <Link
-                onClick={() => handleRemoveItem(item)}
-                className="text-dark"
-                to="/carrito"
-              >
+              <button className="btn btn-dark" onClick={() => handleRemoveItem(item)}>
+                <ToastContainer bottom-right autoClose={4000} />
                 Quitar
-              </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -40,9 +46,7 @@ function Item({ item }) {
               <button className="btn btn-outline-secondary">
                 <i class="fas fa-minus"></i>
               </button>
-              <div className=" px-3 pt-1 pb-1 text-center  ">
-                {item.quantity}
-              </div>
+              <div className=" px-3 pt-1 pb-1 text-center  ">{item.quantity}</div>
               <button className="btn btn-outline-secondary ">
                 <i class="fas fa-plus"></i>
               </button>

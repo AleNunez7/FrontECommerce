@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import Navbar from "../Home/Navbar/Navbar";
 import Footer from "../Home/Footer/Footer";
@@ -33,7 +32,7 @@ function ShoppingCart() {
             })}
           </div>
           <div className="col-sm-5">
-            <div className="border p-3">
+            <div className="border p-3 w-100 h-100">
               <p className="text-start">TOTAL DEL CARRITO</p>
               <hr />
               <div className="d-flex justify-content-between">
