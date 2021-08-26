@@ -21,10 +21,10 @@ function Product() {
   const [product, setProduct] = useState({});
   const user = useSelector((state) => state.user);
   const history = useHistory();
-
+  const [quantity, setQuantity] = useState(1);
   async function handleAddItem() {
     if (user) {
-      product.quantity = 1;
+      product.quantity = quantity;
       dispatch({ type: "ADD_ITEM", payload: product });
       closeAfter7();
     } else {
@@ -59,11 +59,17 @@ function Product() {
             <p className="fs-3 fw-bold ">$ {product.price}</p>
             {product.description}
             <div className=" d-flex align-items-center mt-3 ">
-              <button className="btn btn-outline-secondary">
+              <button
+                onClick={() => quantity > 0 && setQuantity((prev) => prev - 1)}
+                className="btn btn-outline-secondary"
+              >
                 <i class="fas fa-minus"></i>
               </button>
-              <div className=" px-3 pt-1 pb-1 text-center  ">1</div>
-              <button className="btn btn-outline-secondary ">
+              <div className=" px-3 pt-1 pb-1 text-center  ">{quantity}</div>
+              <button
+                onClick={() => setQuantity((prev) => prev + 1)}
+                className="btn btn-outline-secondary "
+              >
                 <i class="fas fa-plus"></i>
               </button>
             </div>

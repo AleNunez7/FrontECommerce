@@ -25,7 +25,7 @@ function SignIn() {
         data: { username, firstname, lastname, email, password },
       });
       dispatch({ type: "ADD_USER", payload: response.data });
-      history.push("/");
+      history.push("/login");
     } catch (error) {
       setError("Intentelo nuevamente");
     }
