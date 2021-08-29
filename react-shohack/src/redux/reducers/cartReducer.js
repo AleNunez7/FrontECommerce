@@ -3,7 +3,6 @@ function cartReducer(cart = [], action) {
     case "ADD_ITEM":
       const checkItem = cart.find((item) => item._id === action.payload._id);
       {
-        console.log(checkItem);
         if (checkItem) {
           checkItem.quantity++;
           return [...cart];

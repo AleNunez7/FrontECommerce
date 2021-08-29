@@ -1,23 +1,22 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Item({ item }) {
-  const closeAfter7 = () =>
+  console.log(item);
+  const dispatch = useDispatch();
+  const closeAfter4 = () =>
     toast.dark(
       "El producto se retiró de la lista correctamente",
       { position: toast.POSITION.BOTTOM_RIGHT },
       { autoClose: 4000 }
     );
-  const dispatch = useDispatch();
 
-  async function handleRemoveItem(item) {
+  function handleRemoveItem(item) {
+    closeAfter4();
     dispatch({ type: "REMOVE_ITEM", payload: item });
-    closeAfter7();
   }
-
   return (
     <>
       <div className="row">
@@ -33,7 +32,6 @@ function Item({ item }) {
             <div className="col-sm-8">
               <p className="fw-bold fs-6">{item.name}</p>
               <button className="btn btn-dark" onClick={() => handleRemoveItem(item)}>
-                <ToastContainer bottom-right autoClose={4000} />
                 Quitar
               </button>
             </div>
@@ -55,8 +53,8 @@ function Item({ item }) {
           </div>
         </div>
       </div>
+      <ToastContainer bottom-right autoClose={4000} />
     </>
   );
 }
-
 export default Item;

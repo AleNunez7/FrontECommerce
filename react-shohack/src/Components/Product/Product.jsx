@@ -73,14 +73,11 @@ function Product() {
                 <i class="fas fa-plus"></i>
               </button>
             </div>
-            <button
-              onClick={handleAddItem}
-              className="btn btn-dark rounded-pill mt-3"
-            >
-              <ToastContainer bottom-right autoClose={4000} />
+            <button onClick={handleAddItem} className="btn btn-dark rounded-pill mt-3">
               Añadir al carrito
             </button>
           </div>
+          <ToastContainer bottom-right autoClose={4000} />
         </div>
       </div>
       <Footer />

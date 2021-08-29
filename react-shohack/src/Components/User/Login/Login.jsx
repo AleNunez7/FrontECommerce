@@ -9,12 +9,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
-  const closeAfter7 = () =>
-    toast.dark(
-      "Contraseña incorrecta, por favor vuelva a ingresar",
-      { position: toast.POSITION.BOTTOM_RIGHT },
-      { autoClose: 4000 }
-    );
   const dispatch = useDispatch();
   const history = useHistory();
   const [password, setPassword] = useState("");
@@ -29,18 +23,25 @@ function Login() {
 
   const handleLogin = async (ev) => {
     ev.preventDefault();
-    const response = await axios({
-      method: "POST",
-      url: "http://localhost:8000/tokens",
-      data: { username, password },
-    });
-    response.data.user.token = await response.data.token;
-    if (response.data.user.token) {
-      dispatch({ type: "ADD_USER", payload: response.data.user });
-      history.push("/productos");
-    } else {
+    try {
+      const response = await axios({
+        method: "POST",
+        url: "http://localhost:8000/tokens",
+        data: { username, password },
+      });
+      response.data.user.token = await response.data.token;
+      if (response) {
+        dispatch({ type: "ADD_USER", payload: response.data.user });
+        history.push("/productos");
+      }
+    } catch (error) {
+      const closeAfter7 = () =>
+        toast.dark(
+          "Contraseña incorrecta, por favor vuelva a ingresar",
+          { position: toast.POSITION.BOTTOM_RIGHT },
+          { autoClose: 4000 }
+        );
       closeAfter7();
-      <ToastContainer bottom-right autoClose={4000} />;
     }
   };
   return (
@@ -78,6 +79,7 @@ function Login() {
               </button>
             </div>
           </form>
+          <ToastContainer bottom-right autoClose={4000} />
         </div>
       </div>
       <Footer />
