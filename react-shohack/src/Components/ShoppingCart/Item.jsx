@@ -8,7 +8,7 @@ function Item({ item }) {
   const dispatch = useDispatch();
   const closeAfter4 = () =>
     toast.dark(
-      "El producto se retiró de la lista correctamente",
+      "El producto se retiró de la lista correctamente.",
       { position: toast.POSITION.BOTTOM_RIGHT },
       { autoClose: 4000 }
     );

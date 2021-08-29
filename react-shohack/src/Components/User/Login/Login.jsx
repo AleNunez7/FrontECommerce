@@ -35,13 +35,16 @@ function Login() {
         history.push("/productos");
       }
     } catch (error) {
-      const closeAfter7 = () =>
-        toast.dark(
-          "Contraseña incorrecta, por favor vuelva a ingresar",
-          { position: toast.POSITION.BOTTOM_RIGHT },
-          { autoClose: 4000 }
-        );
-      closeAfter7();
+      if (error) {
+        console.log(error);
+        const closeAfter7 = () =>
+          toast.dark(
+            "Credenciales incorrectas, por favor vuelva a ingresar sus datos.",
+            { position: toast.POSITION.BOTTOM_RIGHT },
+            { autoClose: 4000 }
+          );
+        closeAfter7();
+      }
     }
   };
   return (
