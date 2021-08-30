@@ -32,10 +32,13 @@ function Item({ item }) {
             </div>
             <div className="col-sm-8">
               <p className="fw-bold fs-6">{item.name}</p>
-              <button className="btn btn-dark" onClick={() => handleRemoveItem(item)}>
+              <span
+                style={{ cursor: "pointer" }}
+                onClick={() => handleRemoveItem(item)}
+              >
                 <ToastContainer bottom-right autoClose={4000} />
                 Quitar
-              </button>
+              </span>
             </div>
           </div>
         </div>
@@ -46,7 +49,9 @@ function Item({ item }) {
               <button className="btn btn-outline-secondary">
                 <i class="fas fa-minus"></i>
               </button>
-              <div className=" px-3 pt-1 pb-1 text-center  ">{item.quantity}</div>
+              <div className=" px-3 pt-1 pb-1 text-center  ">
+                {item.quantity}
+              </div>
               <button className="btn btn-outline-secondary ">
                 <i class="fas fa-plus"></i>
               </button>
