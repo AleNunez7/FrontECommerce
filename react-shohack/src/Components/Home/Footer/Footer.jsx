@@ -6,10 +6,10 @@ function Footer() {
           <div className="row">
             <div className="col-sm-3">
               <h4 className="mb-3">Contacto</h4>
-              <i className="fab fa-instagram"></i>
-              <i className="fab fa-facebook"></i>
-              <i className="fab fa-github"></i>
-              <i className="fab fa-twitter"></i>
+              <i className="fab fa-instagram p-2"></i>
+              <i className="fab fa-facebook p-2"></i>
+              <i className="fab fa-github p-2"></i>
+              <i className="fab fa-twitter p-2"></i>
             </div>
             <div className="col-sm-3">
               <ul>
@@ -70,7 +70,7 @@ function Footer() {
         <hr />
         <div className="container">
           <div className="row">
-            <div className="col text-start">Copyright © Your Website 2021</div>
+            <div className="col text-start">Copyright © ShoHack Shoes Enterprise</div>
             <div className="col text-end">
               <a href="">Privacy Policy</a> · <a href="">Terms & Conditions</a>
             </div>
