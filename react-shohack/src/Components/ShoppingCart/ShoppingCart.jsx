@@ -3,6 +3,8 @@ import Navbar from "../Home/Navbar/Navbar";
 import Footer from "../Home/Footer/Footer";
 import Item from "./Item";
 import { Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ShoppingCart() {
   const cart = useSelector((state) => state.cart);
@@ -51,6 +53,7 @@ function ShoppingCart() {
           </div>
         </div>
       </div>
+      <ToastContainer bottom-right autoClose={4000} />
       <Footer />
     </>
   );
