@@ -32,7 +32,7 @@ function Item({ item }) {
             <div className="col-sm-8">
               <p className="fw-bold fs-6">{item.name}</p>
               <span
-                className="btn btn-dark"
+                style={{ cursor: "pointer" }}
                 onClick={() => handleRemoveItem(item)}
               >
                 Quitar
