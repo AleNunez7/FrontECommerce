@@ -17,29 +17,20 @@ function ShoppingCart() {
         <div className="row mt-3">
           <div className="col-sm-7">
             <div className="row">
-              <div className="col-sm-6">
-                <p>PRODUCTO</p>
-              </div>
-              <div className="col-sm-6">
-                <div className="d-flex justify-content-between">
-                  <p>PRECIO</p>
-                  <p>CANTIDAD</p>
-                </div>
-              </div>
-              <hr />
+              {cart.map((item) => {
+                total = total + item.price * item.quantity;
+                return <Item item={item} />;
+              })}
             </div>
-            {cart.map((item) => {
-              total = total + item.price * item.quantity;
-              return <Item item={item} />;
-            })}
           </div>
+
           <div className="col-sm-5">
             <div className="border p-3 w-100 h-100">
               <p className="text-start">TOTAL DEL CARRITO</p>
               <hr />
-              <div className="d-flex justify-content-between">
+              <div className="d-flex justify-content-between fs-5">
                 <p>Total</p>
-                <p className="fw-bold">$ {total}</p>
+                <p className="fw-bold fs-5">$ {total}</p>
               </div>
               <div className="text-center mt-3">
                 <Link
