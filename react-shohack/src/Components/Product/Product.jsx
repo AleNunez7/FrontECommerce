@@ -56,8 +56,26 @@ function Product() {
           </div>
           <div className="col-sm-6">
             <h2 className="mt-5">{product.name}</h2>
-            <p className="fs-3 fw-bold ">$ {product.price}</p>
+            <p className="fs-3 fw-bold ">
+              $ {product.price} <span className="fs-6 fw-light">(uy)</span>
+            </p>
             {product.description}
+            <p className="py-2">
+              <span className="fs-5 fw-bold text-success">
+                Disponible <span className="text-dark">({product.stock}) unidades</span>
+              </span>
+            </p>
+            <p className="pt-1 fs-5 fw-bold text-dark">Talles</p>
+            <div className="row mb-3">
+              <div className="col">
+                <button className="btn-dark me-2">38</button>
+                <button className="btn-dark me-2">39</button>
+                <button className="btn-dark me-2">40</button>
+                <button className="btn-dark me-2">41</button>
+                <button className="btn-dark me-2">42</button>
+                <button className="btn-dark me-2">43</button>
+              </div>
+            </div>
             <div className=" d-flex align-items-center mt-3 ">
               <button
                 onClick={() => quantity > 0 && setQuantity((prev) => prev - 1)}
@@ -73,7 +91,7 @@ function Product() {
                 <i class="fas fa-plus"></i>
               </button>
             </div>
-            <button onClick={handleAddItem} className="btn btn-dark rounded-pill mt-3">
+            <button onClick={handleAddItem} className="btn btn-dark rounded-pill mt-3 mb-3">
               Añadir al carrito
             </button>
           </div>
