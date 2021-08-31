@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <div>
-      <footer className="p-5 mt-5 bg-dark ">
+    <>
+      <footer className="p-5 mt-auto bg-dark ">
         <div className="container">
           <div className="row">
             <div className="col-sm-3">
@@ -77,7 +77,7 @@ function Footer() {
           </div>
         </div>
       </footer>
-    </div>
+    </>
   );
 }
 

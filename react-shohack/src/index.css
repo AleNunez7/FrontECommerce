@@ -1,8 +1,17 @@
+html,
 body {
   margin: 0;
+  padding: 0;
+  height: 100%;
   font-family: "Georama";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 code {
