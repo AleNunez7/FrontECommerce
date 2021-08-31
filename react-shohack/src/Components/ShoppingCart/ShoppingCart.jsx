@@ -13,8 +13,8 @@ function ShoppingCart() {
   return (
     <>
       <Navbar />
-      <div className="container">
-        <div className="row mt-3">
+      <div className="container mb-5 mt-5">
+        <div className="row ">
           <div className="col-sm-7">
             <div className="row">
               <div className="col-sm-6">
