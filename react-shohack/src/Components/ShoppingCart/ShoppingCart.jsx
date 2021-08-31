@@ -13,7 +13,7 @@ function ShoppingCart() {
   return (
     <>
       <Navbar />
-      <div className="container">
+      <div className="container vh-100">
         <div className="row mt-3">
           <div className="col-sm-7">
             <div className="row">
@@ -22,6 +22,14 @@ function ShoppingCart() {
                 return <Item item={item} />;
               })}
             </div>
+            {cart.length === 0 ? (
+              <p>No hay productos en el carrito</p>
+            ) : (
+              cart.map((item) => {
+                total = total + item.price * item.quantity;
+                return <Item item={item} />;
+              })
+            )}
           </div>
 
           <div className="col-sm-5">

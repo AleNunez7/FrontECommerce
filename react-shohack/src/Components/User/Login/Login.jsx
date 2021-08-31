@@ -50,8 +50,8 @@ function Login() {
   return (
     <>
       <Navbar />
-      <div className="container d-flex justify-content-center my-3">
-        <div className="border p-3 w-50">
+      <div className="container d-flex justify-content-center my-5 py-3">
+        <div className=" p-3 w-50">
           <p className="fw-bold fs-4 text-center">INGRESAR</p>
           <form onSubmit={handleLogin}>
             <label className="mt-3 fw-bold" htmlFor="">
