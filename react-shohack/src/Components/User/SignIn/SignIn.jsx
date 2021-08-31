@@ -34,8 +34,8 @@ function SignIn() {
   return (
     <div>
       <Navbar />
-      <div className="container my-3 d-flex justify-content-center">
-        <div className="p-3 w-50 ">
+      <div className="container my-5 d-flex justify-content-center">
+        <div className="border p-3 w-50 ">
           <p className="fw-bold fs-4 text-center">REGISTRO</p>
           <form onSubmit={handleSignIn}>
             <label className="mt-3 fw-bold" htmlFor="">
