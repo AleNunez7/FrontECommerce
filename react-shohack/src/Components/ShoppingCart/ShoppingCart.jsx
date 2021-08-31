@@ -13,7 +13,7 @@ function ShoppingCart() {
   return (
     <>
       <Navbar />
-      <div className="container">
+      <div className="container ">
         <div className="row mt-3">
           <div className="col-sm-7">
             <div className="row">
@@ -28,10 +28,14 @@ function ShoppingCart() {
               </div>
               <hr />
             </div>
-            {cart.map((item) => {
-              total = total + item.price * item.quantity;
-              return <Item item={item} />;
-            })}
+            {cart.length === 0 ? (
+              <p>No hay productos en el carrito</p>
+            ) : (
+              cart.map((item) => {
+                total = total + item.price * item.quantity;
+                return <Item item={item} />;
+              })
+            )}
           </div>
           <div className="col-sm-5">
             <div className="border p-3 w-100 h-100">
