@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <>
-      <footer className="p-5 mt-auto bg-dark ">
+      <footer className=" footer p-5 mt-3 bg-dark sticky">
         <div className="container">
           <div className="row">
             <div className="col-sm-3">
@@ -70,7 +70,9 @@ function Footer() {
         <hr />
         <div className="container">
           <div className="row">
-            <div className="col text-start">Copyright © ShoHack Shoes Enterprise</div>
+            <div className="col text-start">
+              Copyright © ShoHack Shoes Enterprise
+            </div>
             <div className="col text-end">
               <a href="">Privacy Policy</a> · <a href="">Terms & Conditions</a>
             </div>
