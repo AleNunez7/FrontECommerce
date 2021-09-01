@@ -3,8 +3,6 @@ import axios from "axios";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import Navbar from "../../Home/Navbar/Navbar";
-import Footer from "../../Home/Footer/Footer";
 
 function SignIn() {
   const dispatch = useDispatch();
@@ -33,7 +31,6 @@ function SignIn() {
 
   return (
     <div>
-      <Navbar />
       <div className="container my-5 d-flex justify-content-center">
         <div className="border p-3 w-50 ">
           <p className="fw-bold fs-4 text-center">REGISTRO</p>
@@ -99,7 +96,6 @@ function SignIn() {
           </form>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

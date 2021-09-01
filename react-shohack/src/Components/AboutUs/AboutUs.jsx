@@ -1,12 +1,9 @@
 import React from "react";
-import Navbar from "../Home/Navbar/Navbar";
-import Footer from "../Home/Footer/Footer";
 import "./AboutUs.css";
 import { Link } from "react-router-dom";
 function AboutUs() {
   return (
     <>
-      <Navbar />
       <div>
         <h1 className="fw-light mt-5 mb-5 text-center">
           {" "}
@@ -86,7 +83,6 @@ function AboutUs() {
           </p>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

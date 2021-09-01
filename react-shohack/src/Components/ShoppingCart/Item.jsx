@@ -4,59 +4,68 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Item({ item }) {
-  console.log(item);
   const dispatch = useDispatch();
-  const closeAfter4 = () =>
-    toast.dark(
-      "El producto se retiró de la lista correctamente.",
-      { position: toast.POSITION.BOTTOM_RIGHT },
-      { autoClose: 4000 }
-    );
+  const closeAfter4 = (text) =>
+    toast.dark(text, { position: toast.POSITION.BOTTOM_RIGHT });
+
+  function handleAddItem(item) {
+    closeAfter4("Se agregó correctamente");
+    dispatch({ type: "ADD_ITEM", payload: item });
+  }
+
+  function handleSubstractItem(item) {
+    closeAfter4("Se quitó correctamente");
+    dispatch({ type: "SUBSTRACT_ITEM", payload: item });
+  }
 
   function handleRemoveItem(item) {
-    closeAfter4();
+    closeAfter4("Se elimino del carrito correctamente");
     dispatch({ type: "REMOVE_ITEM", payload: item });
   }
   return (
-    <>
-      <div className="container">
-        <div className="row align-items-center">
-          <div className="col-sm-3 ">
-            <img
-              className="img-fluid"
-              src={process.env.REACT_APP_API_URL + item.imageName}
-              alt="Champion nike"
-            />
-          </div>
+    <div className="container">
+      <div className="row align-items-center">
+        <div className="col-sm-3 ">
+          <img
+            className="img-fluid"
+            src={process.env.REACT_APP_API_URL + item.imageName}
+            alt="Champion nike"
+          />
+        </div>
 
-          <div className="col-sm-3">
-            <p className="fw-bold fs-6">{item.name}</p>
-            <span
-              style={{ cursor: "pointer" }}
-              onClick={() => handleRemoveItem(item)}
-            >
-              Quitar
-            </span>
-          </div>
+        <div className="col-sm-3">
+          <p className="fw-bold fs-6">{item.name}</p>
+          <span
+            style={{ cursor: "pointer" }}
+            onClick={() => handleRemoveItem(item)}
+          >
+            Quitar
+          </span>
+        </div>
 
-          <div className="col-sm-3">
-            <p className="fw-bold">$ {item.price}</p>
-          </div>
-          <div className="col-sm-3">
-            <button className="btn btn-outline-secondary me-3">
-              <i class="fas fa-minus"></i>
-            </button>
+        <div className="col-sm-3">
+          <p className="fw-bold">$ {item.price}</p>
+        </div>
+        <div className="col-sm-3">
+          <button
+            onClick={() => item.quantity > 1 && handleSubstractItem(item)}
+            className="btn btn-outline-secondary me-3"
+          >
+            <i class="fas fa-minus"></i>
+          </button>
 
-            {item.quantity}
+          {item.quantity}
 
-            <button className="btn btn-outline-secondary mx-3">
-              <i class="fas fa-plus"></i>
-            </button>
-          </div>
+          <button
+            onClick={() => handleAddItem(item)}
+            className="btn btn-outline-secondary mx-3"
+          >
+            <i class="fas fa-plus"></i>
+          </button>
         </div>
       </div>
       <ToastContainer bottom-right autoClose={4000} />
-    </>
+    </div>
   );
 }
 export default Item;

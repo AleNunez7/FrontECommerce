@@ -1,6 +1,5 @@
 import React from "react";
-import Navbar from "../../Home/Navbar/Navbar";
-import Footer from "../../Home/Footer/Footer";
+
 import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
@@ -49,7 +48,6 @@ function Login() {
   };
   return (
     <>
-      <Navbar />
       <div className="container d-flex justify-content-center my-5 py-3">
         <div className=" p-3 w-50">
           <p className="fw-bold fs-4 text-center">INGRESAR</p>
@@ -85,7 +83,6 @@ function Login() {
           <ToastContainer bottom-right autoClose={4000} />
         </div>
       </div>
-      <Footer />
     </>
   );
 }

@@ -6,12 +6,15 @@ import Product from "./Components/Product/Product";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import Login from "./Components/User/Login/Login";
 import SignIn from "./Components/User/SignIn/SignIn";
+import Navbar from "./Components/Home/Navbar/Navbar";
+import Footer from "./Components/Home/Footer/Footer";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/producto/:id" component={Product} />
@@ -21,6 +24,7 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/registro" component={SignIn} />
         </Switch>
+        {/*         <Footer /> */}
       </BrowserRouter>
     </div>
   );

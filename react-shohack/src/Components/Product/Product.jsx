@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import Navbar from "../Home/Navbar/Navbar";
-import Footer from "../Home/Footer/Footer";
+
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -44,7 +43,6 @@ function Product() {
   }, []);
   return (
     <>
-      <Navbar />
       <div className="container mt-5">
         <div className="row">
           <div className="col-sm-6">
@@ -62,7 +60,8 @@ function Product() {
             {product.description}
             <p className="py-2">
               <span className="fs-5 fw-bold text-success">
-                Disponible <span className="text-dark">({product.stock}) unidades</span>
+                Disponible{" "}
+                <span className="text-dark">({product.stock}) unidades</span>
               </span>
             </p>
             <p className="pt-1 fs-5 fw-bold text-dark">Talles</p>
@@ -78,7 +77,7 @@ function Product() {
             </div>
             <div className=" d-flex align-items-center mt-3 ">
               <button
-                onClick={() => quantity > 0 && setQuantity((prev) => prev - 1)}
+                onClick={() => quantity > 1 && setQuantity((prev) => prev - 1)}
                 className="btn btn-outline-secondary"
               >
                 <i class="fas fa-minus"></i>
@@ -91,14 +90,16 @@ function Product() {
                 <i class="fas fa-plus"></i>
               </button>
             </div>
-            <button onClick={handleAddItem} className="btn btn-dark rounded-pill mt-3 mb-3">
+            <button
+              onClick={handleAddItem}
+              className="btn btn-dark rounded-pill mt-3 mb-3"
+            >
               Añadir al carrito
             </button>
           </div>
           <ToastContainer bottom-right autoClose={4000} />
         </div>
       </div>
-      <Footer />
     </>
   );
 }
