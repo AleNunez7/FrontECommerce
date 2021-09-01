@@ -53,6 +53,41 @@ function ShoppingCart() {
               <p className="fw-bold fs-5">$ {total}</p>
             </div>
 
+            <div className="row">
+              <div className="col">
+                <div className="form-check">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="flexRadioDefault"
+                    id="flexRadioDefault2"
+                    checked
+                  />
+                  <img
+                    className="imgBuyOption"
+                    src="/img/Paypal.png"
+                    alt="logo de paypal"
+                  />
+                </div>
+              </div>
+              <div className="col">
+                <div className="form-check ">
+                  <input
+                    className="form-check-input "
+                    type="radio"
+                    name="flexRadioDefault"
+                    id="flexRadioDefault2"
+                    checked
+                  />
+                  <img
+                    className="imgBuyOption"
+                    src="/img/mercadopago.png"
+                    alt="logo de mercado pago"
+                  />
+                </div>
+              </div>
+            </div>
+
             <div className="text-center mt-5">
               <Link
                 className="p-1 w-50 text-white text-decoration-none btn btn-dark rounded"

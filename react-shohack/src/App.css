@@ -36,6 +36,11 @@ footer a:hover {
 
 /* Fin del Footer */
 
+.imgBuyOption {
+  width: 10rem;
+  height: 6rem;
+}
+
 /*Inicio Navbar */
 .btnShoppingCart {
   border: none;
