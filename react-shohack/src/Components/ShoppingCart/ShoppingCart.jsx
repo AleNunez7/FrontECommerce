@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { useState } from "react";
 import Item from "./Item";
@@ -8,6 +8,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function ShoppingCart() {
+  const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
   console.log(cart);
@@ -24,6 +25,8 @@ function ShoppingCart() {
         url: "http://localhost:8000/order/success",
         data: { cart, user, total },
       });
+      console.log(response);
+      dispatch({ type: "RESET_CART" });
       history.push("/success");
     } catch (error) {
       setError("Intentelo nuevamente");

@@ -28,6 +28,10 @@ function cartReducer(cart = [], action) {
       return cart.filter((item) => item !== action.payload);
     }
 
+    case "RESET_CART": {
+      return (cart = []);
+    }
+
     default:
       return cart;
   }
