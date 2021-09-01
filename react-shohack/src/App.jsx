@@ -8,6 +8,7 @@ import Login from "./Components/User/Login/Login";
 import SignIn from "./Components/User/SignIn/SignIn";
 import Navbar from "./Components/Home/Navbar/Navbar";
 import Footer from "./Components/Home/Footer/Footer";
+import Success from "./Components/ShoppingCart/Success";
 import "./App.css";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/sobre-nosotros" component={AboutUs} />
           <Route path="/login" component={Login} />
           <Route path="/registro" component={SignIn} />
+          <Route path="/success" component={Success} />
         </Switch>
         {/*         <Footer /> */}
       </BrowserRouter>
