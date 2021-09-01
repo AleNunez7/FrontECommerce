@@ -5,16 +5,13 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Item({ item }) {
   const dispatch = useDispatch();
-  const closeAfter4 = (text) =>
-    toast.dark(text, { position: toast.POSITION.BOTTOM_RIGHT });
+  const closeAfter4 = (text) => toast.dark(text, { position: toast.POSITION.BOTTOM_RIGHT });
 
   function handleAddItem(item) {
-    closeAfter4("Se agregó correctamente");
     dispatch({ type: "ADD_ITEM", payload: item });
   }
 
   function handleSubstractItem(item) {
-    closeAfter4("Se quitó correctamente");
     dispatch({ type: "SUBSTRACT_ITEM", payload: item });
   }
 
@@ -35,10 +32,7 @@ function Item({ item }) {
 
         <div className="col-sm-3">
           <p className="fw-bold fs-6">{item.name}</p>
-          <span
-            style={{ cursor: "pointer" }}
-            onClick={() => handleRemoveItem(item)}
-          >
+          <span style={{ cursor: "pointer" }} onClick={() => handleRemoveItem(item)}>
             Quitar
           </span>
         </div>
@@ -56,10 +50,7 @@ function Item({ item }) {
 
           {item.quantity}
 
-          <button
-            onClick={() => handleAddItem(item)}
-            className="btn btn-outline-secondary mx-3"
-          >
+          <button onClick={() => handleAddItem(item)} className="btn btn-outline-secondary mx-3">
             <i class="fas fa-plus"></i>
           </button>
         </div>
