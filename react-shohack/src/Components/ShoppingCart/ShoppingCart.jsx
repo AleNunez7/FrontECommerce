@@ -60,11 +60,18 @@ function ShoppingCart() {
 
               {cart.map((item) => {
                 return (
-                  <div className="d-flex justify-content-between">
-                    <div>{item.quantity}</div>
-                    <div>{item.name}</div>
-                    <div>$ {item.price * item.quantity}</div>
-                  </div>
+                  <>
+                    <div className="d-flex fw-bold my-2 justify-content-between">
+                      <div>Cantidad</div>
+                      <div>Nombre</div>
+                      <div>Precio</div>
+                    </div>
+                    <div className="d-flex justify-content-between">
+                      <div>{item.quantity}</div>
+                      <div>{item.name}</div>
+                      <div>$ {item.price * item.quantity}</div>
+                    </div>
+                  </>
                 );
               })}
 
