@@ -42,27 +42,16 @@ function Navbar() {
 
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav ">
-              <a
-                className="nav nav-link active "
-                aria-current="page"
-                href="/productos"
-              >
+              <a className="nav nav-link active " aria-current="page" href="/productos">
                 Productos
               </a>
-              <a
-                className="nav-link active "
-                aria-current="page"
-                href="/sobre-nosotros"
-              >
+              <a className="nav-link active " aria-current="page" href="/sobre-nosotros">
                 Sobre nosotros
               </a>
             </div>
             {user ? (
               <div className="ms-auto">
-                <Link
-                  to="/carrito"
-                  className="text-decoration-none text-dark pe-1"
-                >
+                <Link to="/carrito" className="text-decoration-none text-dark pe-1">
                   <button className="bg-light btnShoppingCart position-relative">
                     <i className="fas fa-shopping-cart "></i>
                     <span className="position-absolute top-50 start-0 translate-middle p-2">
@@ -70,7 +59,7 @@ function Navbar() {
                     </span>
                   </button>
                 </Link>
-                <span className="pe-3 fw-bold fs-5">{user.username}</span>
+                <span className="pe-3 fw-bold fs-5 text-uppercase">{user.username}</span>
                 <Link
                   to="/login"
                   onClick={() => dispatch({ type: "REMOVE_USER" })}
@@ -81,10 +70,7 @@ function Navbar() {
               </div>
             ) : (
               <div className="ms-auto">
-                <Link
-                  to="/login"
-                  className="btn btn-dark text-white rounded me-1"
-                >
+                <Link to="/login" className="btn btn-dark text-white rounded me-1">
                   LOGIN
                 </Link>
               </div>
