@@ -57,21 +57,30 @@ function ShoppingCart() {
           </div>
         ) : (
           <div className="col-sm-5">
-            <div className="p-3 w-100 h-50">
+            <div className="p-3 w-100 h-50 ">
               <p className="text-start">ORDEN DE COMPRA</p>
               <hr />
-
+              <div className="d-flex fw-bold my-2 justify-content-between ">
+                <div>Cantidad</div>
+                <div>Nombre</div>
+                <div>Precio</div>
+              </div>
               {cart.map((item) => {
                 return (
-                  <div className="d-flex justify-content-between">
+                  <div className="d-flex justify-content-between ">
                     <div>{item.quantity}</div>
                     <div>{item.name}</div>
                     <div>$ {item.price * item.quantity}</div>
                   </div>
                 );
               })}
-
-              <div className="row mt-5">
+              <div className=" mt-5 d-flex justify-content-between ">
+                <p className="fw-bold fs-4">Total</p>
+                <p className="fw-bold fs-4 ms-auto">$ {total}</p>
+              </div>
+              <p className="text-start mt-5">MÉTODO DE PAGO</p>
+              <hr />
+              <div className="row mt-3">
                 <div className="col ">
                   <div className="form-check ">
                     <input
@@ -104,10 +113,6 @@ function ShoppingCart() {
                     />
                   </div>
                 </div>
-              </div>
-              <div className="d-flex justify-content-between mt-4">
-                <p className="fw-bold fs-4">Total</p>
-                <p className="fw-bold fs-4">$ {total}</p>
               </div>
 
               <div className="text-center mt-5">
