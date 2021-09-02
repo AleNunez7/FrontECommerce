@@ -13,21 +13,23 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Navbar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/producto/:id" component={Product} />
-          <Route path="/productos" component={Products} />
-          <Route path="/carrito" component={ShoppingCart} />
-          <Route path="/sobre-nosotros" component={AboutUs} />
-          <Route path="/login" component={Login} />
-          <Route path="/registro" component={SignIn} />
-          <Route path="/success" component={Success} />
-        </Switch>
-        {/*         <Footer /> */}
-      </BrowserRouter>
+    <div className="general-container">
+      <div className="App">
+        <BrowserRouter>
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/producto/:id" component={Product} />
+            <Route path="/productos" component={Products} />
+            <Route path="/carrito" component={ShoppingCart} />
+            <Route path="/sobre-nosotros" component={AboutUs} />
+            <Route path="/login" component={Login} />
+            <Route path="/registro" component={SignIn} />
+            <Route path="/success" component={Success} />
+          </Switch>
+        </BrowserRouter>
+      </div>
+      <Footer />
     </div>
   );
 }

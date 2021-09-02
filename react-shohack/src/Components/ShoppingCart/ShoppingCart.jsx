@@ -66,7 +66,7 @@ function ShoppingCart() {
                   <div className="d-flex justify-content-between">
                     <div>{item.quantity}</div>
                     <div>{item.name}</div>
-                    <div>$ {item.price}</div>
+                    <div>$ {item.price * item.quantity}</div>
                   </div>
                 );
               })}

@@ -1,14 +1,10 @@
 html,
 body {
-  min-height: 100vh;
   font-family: "Georama";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-#root {
-  position: relative;
-  height: 100vh;
-}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
