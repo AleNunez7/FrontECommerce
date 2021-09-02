@@ -70,11 +70,9 @@ function Footer() {
         <hr />
         <div className="container">
           <div className="row">
-            <div className="col text-start">
-              Copyright © ShoHack Shoes Enterprise
-            </div>
+            <div className="col text-start">Copyright 2021 © ShoHack Shoes Enterprise</div>
             <div className="col text-end">
-              <a href="">Privacy Policy</a> · <a href="">Terms & Conditions</a>
+              <a href="">Términos y Condiciones</a>
             </div>
           </div>
         </div>

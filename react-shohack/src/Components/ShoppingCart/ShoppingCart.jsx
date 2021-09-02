@@ -47,11 +47,8 @@ function ShoppingCart() {
         </div>
         {cart.length === 0 ? (
           <div className="text-center mt-5">
-            <p className="fw-bold fs-3">No hay productos en el carrito</p>
-            <Link
-              to={"/productos"}
-              className="p-2  text-white text-decoration-none btn btn-dark"
-            >
+            <p className="fw-bold fs-3">No hay productos en el carrito 🛒</p>
+            <Link to={"/productos"} className="p-2  text-white text-decoration-none btn btn-dark">
               Volver a productos
             </Link>
           </div>
@@ -81,11 +78,7 @@ function ShoppingCart() {
                       id="flexRadioDefault2"
                       checked
                     />
-                    <img
-                      className="imgBuyOption"
-                      src="/img/Paypal.png"
-                      alt="logo de paypal"
-                    />
+                    <img className="imgBuyOption" src="/img/Paypal.png" alt="logo de paypal" />
                   </div>
                 </div>
                 <div className="col">
