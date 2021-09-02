@@ -58,16 +58,22 @@ function ShoppingCart() {
         ) : (
           <div className="col-sm-5">
             <div className="p-3 w-100 h-50">
-              <p className="text-start">TOTAL DEL CARRITO</p>
+              <p className="text-start">ORDEN DE COMPRA</p>
               <hr />
-              <div className="d-flex justify-content-between fs-5">
-                <p>Total</p>
-                <p className="fw-bold fs-5">$ {total}</p>
-              </div>
 
-              <div className="row">
-                <div className="col">
-                  <div className="form-check">
+              {cart.map((item) => {
+                return (
+                  <div className="d-flex justify-content-between">
+                    <div>{item.quantity}</div>
+                    <div>{item.name}</div>
+                    <div>$ {item.price}</div>
+                  </div>
+                );
+              })}
+
+              <div className="row mt-5">
+                <div className="col ">
+                  <div className="form-check ">
                     <input
                       className="form-check-input"
                       type="radio"
@@ -98,6 +104,10 @@ function ShoppingCart() {
                     />
                   </div>
                 </div>
+              </div>
+              <div className="d-flex justify-content-between mt-4">
+                <p className="fw-bold fs-4">Total</p>
+                <p className="fw-bold fs-4">$ {total}</p>
               </div>
 
               <div className="text-center mt-5">

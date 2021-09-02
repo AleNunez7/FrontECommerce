@@ -58,49 +58,104 @@ function Product() {
             {product.description}
             <p className="py-2">
               {product.stock >= 5 && (
-                <span className="fs-5 fw-bold text-success">
-                  Disponible <span className="text-dark">({product.stock}) unidades</span>
-                </span>
+                <>
+                  <span className="fs-5 fw-bold text-success">
+                    Disponible{" "}
+                    <span className="text-dark">
+                      ({product.stock}) unidades
+                    </span>
+                  </span>
+
+                  <p className="pt-1 fs-5 fw-bold text-dark">Talles</p>
+                  <div className="row mb-3">
+                    <div className="col">
+                      <button className="btn-dark me-2">38</button>
+                      <button className="btn-dark me-2">39</button>
+                      <button className="btn-dark me-2">40</button>
+                      <button className="btn-dark me-2">41</button>
+                      <button className="btn-dark me-2">42</button>
+                      <button className="btn-dark me-2">43</button>
+                    </div>
+                  </div>
+                  <div className=" d-flex align-items-center mt-3 ">
+                    <button
+                      onClick={() =>
+                        quantity > 1 && setQuantity((prev) => prev - 1)
+                      }
+                      className="btn btn-outline-secondary"
+                    >
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <div className=" px-3 pt-1 pb-1 text-center  ">
+                      {quantity}
+                    </div>
+                    <button
+                      onClick={() => setQuantity((prev) => prev + 1)}
+                      className="btn btn-outline-secondary "
+                    >
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                  <button
+                    onClick={handleAddItem}
+                    className="btn btn-dark rounded-pill mt-3 mb-3"
+                  >
+                    Añadir al carrito
+                  </button>
+                </>
               )}
               {product.stock >= 1 && product.stock < 5 && (
-                <span className="fs-5 fw-bold text-warning">
-                  Pocas unidades
-                  <span className="text-dark">({product.stock}) unidades</span>
-                </span>
+                <>
+                  <span className="fs-5 fw-bold text-warning">
+                    Pocas unidades
+                    <span className="text-dark">
+                      ({product.stock}) unidades
+                    </span>
+                  </span>
+                  <p className="pt-1 fs-5 fw-bold text-dark">Talles</p>
+                  <div className="row mb-3">
+                    <div className="col">
+                      <button className="btn-dark me-2">38</button>
+                      <button className="btn-dark me-2">39</button>
+                      <button className="btn-dark me-2">40</button>
+                      <button className="btn-dark me-2">41</button>
+                      <button className="btn-dark me-2">42</button>
+                      <button className="btn-dark me-2">43</button>
+                    </div>
+                  </div>
+                  <div className=" d-flex align-items-center mt-3 ">
+                    <button
+                      onClick={() =>
+                        quantity > 1 && setQuantity((prev) => prev - 1)
+                      }
+                      className="btn btn-outline-secondary"
+                    >
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <div className=" px-3 pt-1 pb-1 text-center  ">
+                      {quantity}
+                    </div>
+                    <button
+                      onClick={() => setQuantity((prev) => prev + 1)}
+                      className="btn btn-outline-secondary "
+                    >
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                  <button
+                    onClick={handleAddItem}
+                    className="btn btn-dark rounded-pill mt-3 mb-3"
+                  >
+                    Añadir al carrito
+                  </button>
+                </>
               )}
               {product.stock <= 0 && (
-                <span className="fs-5 fw-bold text-danger">No hay unidades disponibles</span>
+                <span className="fs-5 fw-bold text-danger">
+                  No hay unidades disponibles
+                </span>
               )}
             </p>
-            <p className="pt-1 fs-5 fw-bold text-dark">Talles</p>
-            <div className="row mb-3">
-              <div className="col">
-                <button className="btn-dark me-2">38</button>
-                <button className="btn-dark me-2">39</button>
-                <button className="btn-dark me-2">40</button>
-                <button className="btn-dark me-2">41</button>
-                <button className="btn-dark me-2">42</button>
-                <button className="btn-dark me-2">43</button>
-              </div>
-            </div>
-            <div className=" d-flex align-items-center mt-3 ">
-              <button
-                onClick={() => quantity > 1 && setQuantity((prev) => prev - 1)}
-                className="btn btn-outline-secondary"
-              >
-                <i class="fas fa-minus"></i>
-              </button>
-              <div className=" px-3 pt-1 pb-1 text-center  ">{quantity}</div>
-              <button
-                onClick={() => setQuantity((prev) => prev + 1)}
-                className="btn btn-outline-secondary "
-              >
-                <i class="fas fa-plus"></i>
-              </button>
-            </div>
-            <button onClick={handleAddItem} className="btn btn-dark rounded-pill mt-3 mb-3">
-              Añadir al carrito
-            </button>
           </div>
           <ToastContainer bottom-right autoClose={4000} />
         </div>
