@@ -11,7 +11,10 @@ function Filter() {
     <div className="container">
       <div className="row my-4 d-flex justify-content-between">
         <div className="col-sm-4 ">
-          <button className="btn btn-dark dropdown-toggle" onClick={() => closeAfter7()}>
+          <button
+            className="btn btn-dark dropdown-toggle mb-2"
+            onClick={() => closeAfter7()}
+          >
             Marca
           </button>
         </div>
@@ -25,7 +28,10 @@ function Filter() {
               onChange={(ev) => setUsername(ev.target.value)} */
               placeholder="Ingrese un producto"
             />
-            <button className="btn btn-outline-secondary" onClick={() => closeAfter7()}>
+            <button
+              className="btn btn-outline-secondary"
+              onClick={() => closeAfter7()}
+            >
               <i className="fas fa-search"></i>
             </button>
           </div>

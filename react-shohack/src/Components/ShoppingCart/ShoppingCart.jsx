@@ -17,7 +17,6 @@ function ShoppingCart() {
   let total = 0;
 
   const handleOrder = async (ev) => {
-    console.log("entre aca");
     try {
       ev.preventDefault();
       const response = await axios({
@@ -25,7 +24,7 @@ function ShoppingCart() {
         url: "http://localhost:8000/order/success",
         data: { cart, user, total },
       });
-      console.log(response);
+
       dispatch({ type: "RESET_CART" });
       history.push("/success");
     } catch (error) {
@@ -38,7 +37,7 @@ function ShoppingCart() {
       <div className="row mt-3">
         <div className="col-sm-7">
           {cart.length === 0 ? (
-            <p>No hay productos en el carrito</p>
+            <p></p>
           ) : (
             cart.map((item) => {
               total = total + item.price * item.quantity;
@@ -46,61 +45,72 @@ function ShoppingCart() {
             })
           )}
         </div>
+        {cart.length === 0 ? (
+          <div className="text-center mt-5">
+            <p className="fw-bold fs-3">No hay productos en el carrito</p>
+            <Link
+              to={"/productos"}
+              className="p-2  text-white text-decoration-none btn btn-dark"
+            >
+              Volver a productos
+            </Link>
+          </div>
+        ) : (
+          <div className="col-sm-5">
+            <div className="p-3 w-100 h-50">
+              <p className="text-start">TOTAL DEL CARRITO</p>
+              <hr />
+              <div className="d-flex justify-content-between fs-5">
+                <p>Total</p>
+                <p className="fw-bold fs-5">$ {total}</p>
+              </div>
 
-        <div className="col-sm-5">
-          <div className="p-3 w-100 h-50">
-            <p className="text-start">TOTAL DEL CARRITO</p>
-            <hr />
-            <div className="d-flex justify-content-between fs-5">
-              <p>Total</p>
-              <p className="fw-bold fs-5">$ {total}</p>
-            </div>
-
-            <div className="row">
-              <div className="col">
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    name="flexRadioDefault"
-                    id="flexRadioDefault2"
-                    checked
-                  />
-                  <img
-                    className="imgBuyOption"
-                    src="/img/Paypal.png"
-                    alt="logo de paypal"
-                  />
+              <div className="row">
+                <div className="col">
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault2"
+                      checked
+                    />
+                    <img
+                      className="imgBuyOption"
+                      src="/img/Paypal.png"
+                      alt="logo de paypal"
+                    />
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-check ">
+                    <input
+                      className="form-check-input "
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault2"
+                      checked
+                    />
+                    <img
+                      className="imgBuyOption"
+                      src="/img/mercadopago.png"
+                      alt="logo de mercado pago"
+                    />
+                  </div>
                 </div>
               </div>
-              <div className="col">
-                <div className="form-check ">
-                  <input
-                    className="form-check-input "
-                    type="radio"
-                    name="flexRadioDefault"
-                    id="flexRadioDefault2"
-                    checked
-                  />
-                  <img
-                    className="imgBuyOption"
-                    src="/img/mercadopago.png"
-                    alt="logo de mercado pago"
-                  />
-                </div>
-              </div>
-            </div>
 
-            <div className="text-center mt-5">
-              <Link
-                className="p-1 w-50 text-white text-decoration-none btn btn-dark rounded"
-                onClick={handleOrder}
-              >
-                FINALIZAR COMPRA
-              </Link>
+              <div className="text-center mt-5">
+                <Link
+                  className="p-1 w-50 text-white text-decoration-none btn btn-dark rounded"
+                  onClick={handleOrder}
+                >
+                  FINALIZAR COMPRA
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
       <ToastContainer bottom-right autoClose={4000} />
     </div>
