@@ -9,6 +9,7 @@ import SignIn from "./Components/User/SignIn/SignIn";
 import Navbar from "./Components/Home/Navbar/Navbar";
 import Footer from "./Components/Home/Footer/Footer";
 import Success from "./Components/ShoppingCart/Success";
+import Contact from "./Components/Contact/Contact";
 import "./App.css";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path="/productos" component={Products} />
             <Route path="/carrito" component={ShoppingCart} />
             <Route path="/sobre-nosotros" component={AboutUs} />
+            <Route path="/contacto" component={Contact} />
             <Route path="/login" component={Login} />
             <Route path="/registro" component={SignIn} />
             <Route path="/success" component={Success} />

@@ -33,6 +33,11 @@ function Footer() {
                     Sobre Nosotros
                   </a>
                 </li>
+                <li>
+                  <a className="pt-2 text-decoration-none" href="/contacto">
+                    Contacto
+                  </a>
+                </li>
               </ul>
             </div>
             <div className="col-sm-3">

@@ -48,6 +48,9 @@ function Navbar() {
               <a className="nav-link active " aria-current="page" href="/sobre-nosotros">
                 Sobre nosotros
               </a>
+              <a className="nav-link active " aria-current="page" href="/contacto">
+                Contacto
+              </a>
             </div>
             {user ? (
               <div className="ms-auto">
