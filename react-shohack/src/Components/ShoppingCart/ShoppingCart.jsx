@@ -47,7 +47,7 @@ function ShoppingCart() {
         </div>
         {cart.length === 0 ? (
           <div className="text-center mt-5">
-            <p className="fw-bold fs-3">No hay productos en el carrito</p>
+            <p className="fw-bold fs-3">No hay productos en el carrito 🛒</p>
             <Link
               to={"/productos"}
               className="p-2  text-white text-decoration-none btn btn-dark"
@@ -67,11 +67,13 @@ function ShoppingCart() {
               </div>
               {cart.map((item) => {
                 return (
-                  <div className="d-flex justify-content-between ">
-                    <div>{item.quantity}</div>
-                    <div>{item.name}</div>
-                    <div>$ {item.price * item.quantity}</div>
-                  </div>
+                  <>
+                    <div className="d-flex justify-content-between">
+                      <div>{item.quantity}</div>
+                      <div>{item.name}</div>
+                      <div>$ {item.price * item.quantity}</div>
+                    </div>
+                  </>
                 );
               })}
               <div className=" mt-5 d-flex justify-content-between ">
