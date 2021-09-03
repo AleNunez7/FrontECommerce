@@ -7,7 +7,6 @@ import { useHistory } from "react-router-dom";
 function SignIn() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const [error, setError] = useState(false);
   const [username, setUsername] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -25,7 +24,7 @@ function SignIn() {
       dispatch({ type: "ADD_USER", payload: response.data });
       history.push("/productos");
     } catch (error) {
-      setError("Intentelo nuevamente");
+      alert("Intentelo nuevamente");
     }
   };
 

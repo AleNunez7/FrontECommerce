@@ -5,7 +5,7 @@ function Contact() {
         <h2 className="fw-bold text-center mb-3">CONTACTO</h2>
         <form>
           <div className="mb-3">
-            <label for="name" className="form-label">
+            <label htmlFor="name" className="form-label">
               Nombre
             </label>
             <input
@@ -16,7 +16,7 @@ function Contact() {
             />
           </div>
           <div className="mb-3">
-            <label for="email" className="form-label">
+            <label htmlFor="email" className="form-label">
               Email
             </label>
             <input
@@ -27,7 +27,7 @@ function Contact() {
             />
           </div>
           <div className="mb-3">
-            <label for="message" className="form-label">
+            <label htmlFor="message" className="form-label">
               Mensaje
             </label>
             <textarea

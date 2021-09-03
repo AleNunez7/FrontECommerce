@@ -19,7 +19,7 @@ function CardImage() {
       <div className="row text-center fw-bold">
         {products.map((product) => {
           return (
-            <div className="col-sm-4">
+            <div key={product._id} className="col-sm-4">
               <Link
                 to={`/producto/${product._id}`}
                 className="text-decoration-none"

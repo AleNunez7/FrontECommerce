@@ -38,7 +38,7 @@ function Product() {
       setProduct(response.data);
     };
     getproduct();
-  }, []);
+  }, [params.id]);
   return (
     <>
       <div className="container mt-5">
@@ -84,7 +84,7 @@ function Product() {
                       }
                       className="btn btn-outline-secondary"
                     >
-                      <i class="fas fa-minus"></i>
+                      <i className="fas fa-minus"></i>
                     </button>
                     <div className=" px-3 pt-1 pb-1 text-center  ">
                       {quantity}
@@ -93,7 +93,7 @@ function Product() {
                       onClick={() => setQuantity((prev) => prev + 1)}
                       className="btn btn-outline-secondary "
                     >
-                      <i class="fas fa-plus"></i>
+                      <i className="fas fa-plus"></i>
                     </button>
                   </div>
                   <button
@@ -130,7 +130,7 @@ function Product() {
                       }
                       className="btn btn-outline-secondary"
                     >
-                      <i class="fas fa-minus"></i>
+                      <i className="fas fa-minus"></i>
                     </button>
                     <div className=" px-3 pt-1 pb-1 text-center  ">
                       {quantity}
@@ -139,7 +139,7 @@ function Product() {
                       onClick={() => setQuantity((prev) => prev + 1)}
                       className="btn btn-outline-secondary "
                     >
-                      <i class="fas fa-plus"></i>
+                      <i className="fas fa-plus"></i>
                     </button>
                   </div>
                   <button

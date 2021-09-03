@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
-import { useState } from "react";
 import Item from "./Item";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -11,24 +10,21 @@ function ShoppingCart() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
-  console.log(cart);
-  const [error, setError] = useState(false);
   const history = useHistory();
   let total = 0;
 
   const handleOrder = async (ev) => {
     try {
       ev.preventDefault();
-      const response = await axios({
+      await axios({
         method: "POST",
         url: process.env.REACT_APP_API + "/order/success",
         data: { cart, user, total },
       });
-
       dispatch({ type: "RESET_CART" });
       history.push("/success");
     } catch (error) {
-      setError("Intentelo nuevamente");
+      alert("Intentelo nuevamente");
     }
   };
 

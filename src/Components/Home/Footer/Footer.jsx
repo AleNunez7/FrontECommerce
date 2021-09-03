@@ -72,10 +72,10 @@ function Footer() {
                 </li>
               </ul>
             </div>
-            <div class="col-sm-3">
+            <div className="col-sm-3">
               <ul>
                 <h5>
-                  <i class="fab fa-github"></i> GITHUB
+                  <i className="fab fa-github"></i> GITHUB
                 </h5>
                 <li className="my-1">
                   <a

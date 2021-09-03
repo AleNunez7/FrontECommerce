@@ -49,14 +49,14 @@ function Item({ item }) {
             onClick={() => item.quantity > 1 && handleSubstractItem(item)}
             className="btn btn-outline-secondary "
           >
-            <i class="fas fa-minus"></i>
+            <i className="fas fa-minus"></i>
           </button>
           <div className=" px-3 pt-1 pb-1 text-center  ">{item.quantity}</div>
           <button
             onClick={() => handleAddItem(item)}
             className="btn btn-outline-secondary "
           >
-            <i class="fas fa-plus"></i>
+            <i className="fas fa-plus"></i>
           </button>
         </div>
       </div>
