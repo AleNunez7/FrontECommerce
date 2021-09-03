@@ -29,7 +29,10 @@ function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a className="pt-2 text-decoration-none" href="/sobre-nosotros">
+                  <a
+                    className="pt-2 text-decoration-none"
+                    href="/sobre-nosotros"
+                  >
                     Sobre Nosotros
                   </a>
                 </li>
@@ -52,12 +55,18 @@ function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a className="text-decoration-none" href="https://nodejs.org/es/docs/">
+                  <a
+                    className="text-decoration-none"
+                    href="https://nodejs.org/es/docs/"
+                  >
                     Node.js
                   </a>
                 </li>
                 <li>
-                  <a className="text-decoration-none" href="https://docs.mongodb.com/manual/">
+                  <a
+                    className="text-decoration-none"
+                    href="https://docs.mongodb.com/manual/"
+                  >
                     MongoDB
                   </a>
                 </li>
@@ -77,12 +86,18 @@ function Footer() {
                   </a>
                 </li>
                 <li className="fw-bold my-1">
-                  <a className="fw-bold text-decoration-none" href="https://github.com/rotza1802">
+                  <a
+                    className="fw-bold text-decoration-none"
+                    href="https://github.com/rotza1802"
+                  >
                     Joaquin Rosales
                   </a>
                 </li>
                 <li className="fw-bold my-1">
-                  <a className="fw-bold text-decoration-none " href="https://github.com/AleNunez7">
+                  <a
+                    className="fw-bold text-decoration-none "
+                    href="https://github.com/AleNunez7"
+                  >
                     Alejandro Núñez
                   </a>
                 </li>
@@ -98,9 +113,11 @@ function Footer() {
         <hr />
         <div className="container">
           <div className="row">
-            <div className="col text-start">Copyright 2021 © ShoHack Shoes Enterprise</div>
+            <div className="col text-start">
+              Copyright 2021 © ShoHack Shoes Enterprise
+            </div>
             <div className="col text-end">
-              <a href="">Términos y Condiciones</a>
+              <a href="/">Términos y Condiciones</a>
             </div>
           </div>
         </div>
