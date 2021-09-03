@@ -25,7 +25,7 @@ function Login() {
     try {
       const response = await axios({
         method: "POST",
-        url: "http://localhost:8000/tokens",
+        url: process.env.REACT_APP_API + "/tokens",
         data: { username, password },
       });
       response.data.user.token = await response.data.token;

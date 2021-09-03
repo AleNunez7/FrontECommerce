@@ -21,7 +21,7 @@ function ShoppingCart() {
       ev.preventDefault();
       const response = await axios({
         method: "POST",
-        url: "http://localhost:8000/order/success",
+        url: process.env.REACT_APP_API + "/order/success",
         data: { cart, user, total },
       });
 

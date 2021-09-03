@@ -7,7 +7,7 @@ function CardImage() {
     const getProducts = async () => {
       const response = await axios({
         method: "get",
-        url: "http://localhost:8000/",
+        url: process.env.REACT_APP_API,
       });
       setProducts(response.data.products);
     };
@@ -27,7 +27,7 @@ function CardImage() {
               >
                 <img
                   className="img-fluid h-50"
-                  src={process.env.REACT_APP_API_URL + product.imageName}
+                  src={process.env.REACT_APP_IMG_URL + product.imageName}
                   alt="Champion Vans"
                 />
                 <div className="mt-3">

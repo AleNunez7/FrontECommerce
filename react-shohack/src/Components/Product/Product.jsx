@@ -33,7 +33,7 @@ function Product() {
     const getproduct = async () => {
       const response = await axios({
         method: "get",
-        url: "http://localhost:8000/products/" + params.id,
+        url: process.env.REACT_APP_API + "/products/" + params.id,
       });
       setProduct(response.data);
     };
@@ -46,7 +46,7 @@ function Product() {
           <div className="col-sm-6">
             <img
               className="img-fluid "
-              src={process.env.REACT_APP_API_URL + product.imageName}
+              src={process.env.REACT_APP_IMG_URL + product.imageName}
               alt="Champion Nike"
             />
           </div>
@@ -60,7 +60,10 @@ function Product() {
               {product.stock >= 5 && (
                 <>
                   <span className="fs-5 fw-bold text-success">
-                    Disponible <span className="text-dark">({product.stock}) unidades</span>
+                    Disponible{" "}
+                    <span className="text-dark">
+                      ({product.stock}) unidades
+                    </span>
                   </span>
 
                   <p className="pt-1 fs-5 fw-bold text-dark">Talles</p>
@@ -76,12 +79,16 @@ function Product() {
                   </div>
                   <div className=" d-flex align-items-center mt-3 ">
                     <button
-                      onClick={() => quantity > 1 && setQuantity((prev) => prev - 1)}
+                      onClick={() =>
+                        quantity > 1 && setQuantity((prev) => prev - 1)
+                      }
                       className="btn btn-outline-secondary"
                     >
                       <i class="fas fa-minus"></i>
                     </button>
-                    <div className=" px-3 pt-1 pb-1 text-center  ">{quantity}</div>
+                    <div className=" px-3 pt-1 pb-1 text-center  ">
+                      {quantity}
+                    </div>
                     <button
                       onClick={() => setQuantity((prev) => prev + 1)}
                       className="btn btn-outline-secondary "
@@ -89,7 +96,10 @@ function Product() {
                       <i class="fas fa-plus"></i>
                     </button>
                   </div>
-                  <button onClick={handleAddItem} className="btn btn-dark rounded-pill mt-3 mb-3">
+                  <button
+                    onClick={handleAddItem}
+                    className="btn btn-dark rounded-pill mt-3 mb-3"
+                  >
                     Añadir al carrito
                   </button>
                 </>
@@ -98,7 +108,9 @@ function Product() {
                 <>
                   <span className="fs-5 fw-bold text-warning">
                     Pocas unidades
-                    <span className="text-dark">({product.stock}) unidades</span>
+                    <span className="text-dark">
+                      ({product.stock}) unidades
+                    </span>
                   </span>
                   <p className="pt-1 fs-5 fw-bold text-dark">Talles</p>
                   <div className="row mb-3">
@@ -113,12 +125,16 @@ function Product() {
                   </div>
                   <div className=" d-flex align-items-center mt-3 ">
                     <button
-                      onClick={() => quantity > 1 && setQuantity((prev) => prev - 1)}
+                      onClick={() =>
+                        quantity > 1 && setQuantity((prev) => prev - 1)
+                      }
                       className="btn btn-outline-secondary"
                     >
                       <i class="fas fa-minus"></i>
                     </button>
-                    <div className=" px-3 pt-1 pb-1 text-center  ">{quantity}</div>
+                    <div className=" px-3 pt-1 pb-1 text-center  ">
+                      {quantity}
+                    </div>
                     <button
                       onClick={() => setQuantity((prev) => prev + 1)}
                       className="btn btn-outline-secondary "
@@ -126,13 +142,18 @@ function Product() {
                       <i class="fas fa-plus"></i>
                     </button>
                   </div>
-                  <button onClick={handleAddItem} className="btn btn-dark rounded-pill mt-3 mb-3">
+                  <button
+                    onClick={handleAddItem}
+                    className="btn btn-dark rounded-pill mt-3 mb-3"
+                  >
                     Añadir al carrito
                   </button>
                 </>
               )}
               {product.stock <= 0 && (
-                <span className="fs-5 fw-bold text-danger">No hay unidades disponibles</span>
+                <span className="fs-5 fw-bold text-danger">
+                  No hay unidades disponibles
+                </span>
               )}
             </p>
           </div>

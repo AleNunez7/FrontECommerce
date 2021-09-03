@@ -19,7 +19,7 @@ function SignIn() {
       ev.preventDefault();
       const response = await axios({
         method: "POST",
-        url: "http://localhost:8000/users",
+        url: process.env.REACT_APP_API + "/users",
         data: { username, firstname, lastname, email, password },
       });
       dispatch({ type: "ADD_USER", payload: response.data });
