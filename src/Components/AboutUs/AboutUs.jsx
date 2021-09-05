@@ -74,6 +74,7 @@ function AboutUs() {
         <div className="text-start fs-4 mb-5">
           <p>
             Link para ingresar a la vista de Administrador: <br /> https://admin-shohack.vercel.app
+            <br />
             En esta sección se podrá leer, crear, modificar y eliminar usuarios, productos y roles.
             <br /> También se podrán ver las ordenes realizadas por cada usuario. <br />
             Usuario: admin <br /> Password: admin
