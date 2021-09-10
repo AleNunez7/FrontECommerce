@@ -56,14 +56,6 @@ function Navbar() {
             </div>
             {user ? (
               <div className="ms-auto">
-                <Link to="/carrito" className="text-decoration-none text-dark pe-1">
-                  <button className="bg-light btnShoppingCart position-relative">
-                    <i className="fas fa-shopping-cart "></i>
-                    <span className="position-absolute top-50 start-0 translate-middle p-2">
-                      <span className="pe-2 fw-bold">{cart.length}</span>
-                    </span>
-                  </button>
-                </Link>
                 <ul className="navbar-nav">
                   <li className="nav-item dropdown">
                     <a
@@ -76,9 +68,15 @@ function Navbar() {
                       {user.username}
                     </a>
                     <ul
-                      class="dropdown-menu dropdown-menu-dark"
+                      class="dropdown-menu dropdown-menu-light"
                       aria-labelledby="navbarDarkDropdownMenuLink"
                     >
+                      <li>
+                        <Link to="/carrito" className="text-decoration-none dropdown-item ">
+                          <i className="fas fa-shopping-cart me-2"></i>
+                          {cart.length}
+                        </Link>
+                      </li>
                       <li>
                         <Link
                           className="text-decoration-none dropdown-item"
