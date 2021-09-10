@@ -62,14 +62,39 @@ function Navbar() {
                     </span>
                   </button>
                 </Link>
-                <span className="pe-3 fw-bold fs-5 text-uppercase">{user.username}</span>
-                <Link
-                  to="/login"
-                  onClick={() => dispatch({ type: "REMOVE_USER" })}
-                  className="btn btn-dark text-white rounded"
-                >
-                  LOGOUT
-                </Link>
+                <ul className="navbar-nav">
+                  <li className="nav-item dropdown">
+                    <a
+                      className="nav-link dropdown-toggle pe-3 fw-bold fs-5 text-uppercase"
+                      id="navbarDarkDropdownMenuLink"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      {user.username}
+                    </a>
+                    <ul
+                      class="dropdown-menu dropdown-menu-dark"
+                      aria-labelledby="navbarDarkDropdownMenuLink"
+                    >
+                      <li>
+                        <Link
+                          className="text-decoration-none dropdown-item"
+                          to={`/orden/${user._id}`}
+                        >
+                          Ordenes
+                        </Link>
+                      </li>
+                      <Link
+                        className="text-decoration-none dropdown-item"
+                        to="/login"
+                        onClick={() => dispatch({ type: "REMOVE_USER" })}
+                      >
+                        Log out
+                      </Link>
+                    </ul>
+                  </li>
+                </ul>
               </div>
             ) : (
               <div className="ms-auto">
